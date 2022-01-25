@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Know what you eat!</string>
+    <string name="title_Suchen">Suchen</string>
+    <string name="title_Scannen">Scannen</string>
+    <string name="title_Profil">Profil</string>
+
+    <string-array name="products">
+        <item>Produkt 1</item>
+        <item>Produkt 2</item>
+        <item>Produkt 3</item>
+        <item>Produkt 4</item>
+        <item>Produkt 5</item>
+        <item>Produkt 6</item>
+        <item>Produkt 7</item>
+        <item>Produkt 8</item>
+        <item>Produkt 9</item>
+        <item>Produkt 10</item>
+        <item>Produkt 11</item>
+        <item>Produkt 12</item>
+        <item>Produkt 13</item>
+        <item>Produkt 14</item>
+        <item>Produkt 15</item>
+    </string-array>
+</resources>
