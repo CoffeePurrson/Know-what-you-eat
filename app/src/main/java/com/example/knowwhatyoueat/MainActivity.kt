@@ -13,6 +13,7 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.knowwhatyoueat.databinding.ActivityMainBinding
+import android.content.Intent
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,6 +42,11 @@ class MainActivity : AppCompatActivity() {
 
             // Add the request to the RequestQueue.
             queue.add(stringRequest)
+        }
+
+        binding.buTest2.setOnClickListener {
+            val unter = Intent(this, ProductView::class.java)
+            startActivity(unter)
         }
 
 
