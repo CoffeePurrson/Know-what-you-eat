@@ -46,7 +46,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_margin="5dp"
-        android:text="testbutton"
+        android:text="Demonstration"
         android:textColor="#000000"
         android:backgroundTint="@color/ui_green"
         android:textSize="20sp"
@@ -59,12 +59,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:text="testtext"
+        android:text=""
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/buTest"
         app:layout_constraintTop_toBottomOf="@+id/buTest" />
-
+<!--
     <Button
         android:id="@+id/buTest2"
         android:layout_width="wrap_content"
@@ -78,6 +78,6 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTest" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTest" /> -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

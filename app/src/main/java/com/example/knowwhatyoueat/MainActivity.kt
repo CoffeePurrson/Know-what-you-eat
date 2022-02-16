@@ -35,20 +35,22 @@ class MainActivity : AppCompatActivity() {
             // Request a string response from the provided URL.
             val stringRequest = JsonObjectRequest(Request.Method.GET, url, null,
                 Response.Listener { response ->
-                    // Display the first 500 characters of the response string.
-                    textView.text = "${response.toString().substring(0, 500)}"
+                    val productViewActivity = Intent(this, ProductView::class.java)
+                    productViewActivity.putExtra("response", response.toString())
+                    startActivity(productViewActivity)
+                    //textView.text = "${response.toString().substring(0, 500)}"
                 },
-                Response.ErrorListener { textView.text = "That didn't work!" })
+                Response.ErrorListener { textView.text = "Dat hat nich geklappt :("})
 
             // Add the request to the RequestQueue.
             queue.add(stringRequest)
         }
-
+/*
         binding.buTest2.setOnClickListener {
             val unter = Intent(this, ProductView::class.java)
             startActivity(unter)
         }
-
+*/
 
         val navView: BottomNavigationView = binding.navView
 

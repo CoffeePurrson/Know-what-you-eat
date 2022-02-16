@@ -113,11 +113,12 @@
 
     <TextView
         android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_width="234dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="Produkt Name"
+        android:lines="3"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageView"
@@ -157,7 +158,7 @@
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/textView19"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
-
+<!--
     <TextView
         android:id="@+id/textView24"
         android:layout_width="234dp"
@@ -166,7 +167,7 @@
         android:text='"Hersteller Name"'
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+        app:layout_constraintTop_toBottomOf="@+id/textView19" /> -->
 
     <TextView
         android:id="@+id/textView25"
