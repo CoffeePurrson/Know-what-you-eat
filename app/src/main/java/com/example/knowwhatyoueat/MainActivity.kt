@@ -24,9 +24,9 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val textView = binding.tvTest
+        //val textView = binding.tvTest
 
-
+/*
         binding.buTest.setOnClickListener {
             // Instantiate the RequestQueue.
             val queue = Volley.newRequestQueue(this)
@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
             // Add the request to the RequestQueue.
             queue.add(stringRequest)
-        }
+        } */
 /*
         binding.buTest2.setOnClickListener {
             val unter = Intent(this, ProductView::class.java)
