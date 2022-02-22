@@ -42,7 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView63" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_protein100" />
 
     <TextView
         android:id="@+id/textView28"
@@ -89,7 +89,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView26" />
 
     <TextView
-        android:id="@+id/textView23"
+        android:id="@+id/tv_herstellungsland"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -98,21 +98,21 @@
         android:textSize="16sp"
         android:textStyle="italic"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_produktImage" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/tv_origin"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
         android:text='"Herstellungsland"'
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/textView23"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintStart_toEndOf="@+id/tv_herstellungsland"
+        app:layout_constraintTop_toBottomOf="@+id/iv_produktImage" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/tv_produktname"
         android:layout_width="234dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -121,11 +121,11 @@
         android:lines="3"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/iv_produktImage"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/iv_produktImage"
         android:layout_width="112dp"
         android:layout_height="114dp"
         android:layout_marginStart="20dp"
@@ -137,7 +137,7 @@
         android:background="#808080" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/tv_hersteller"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -145,19 +145,19 @@
         android:text="Hersteller:"
         android:textSize="16sp"
         android:textStyle="italic"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        app:layout_constraintStart_toEndOf="@+id/iv_produktImage"
+        app:layout_constraintTop_toBottomOf="@+id/tv_produktname" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/tv_herstellername"
         android:layout_width="157dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
         android:text='"Hersteller Name"-'
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/textView19"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        app:layout_constraintStart_toEndOf="@+id/tv_hersteller"
+        app:layout_constraintTop_toBottomOf="@+id/tv_produktname" />
 <!--
     <TextView
         android:id="@+id/textView24"
@@ -170,7 +170,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView19" /> -->
 
     <TextView
-        android:id="@+id/textView25"
+        android:id="@+id/tv_warnungen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -179,7 +179,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_herstellungsland" />
 
     <TextView
         android:id="@+id/textView26"
@@ -190,7 +190,7 @@
         android:text='"Allergiewarnung 1"'
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView25" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_warnungen" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -199,7 +199,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView25"
+        app:layout_constraintTop_toBottomOf="@+id/tv_warnungen"
         app:srcCompat="@android:drawable/ic_dialog_alert"
         app:tint="#FF3300" />
 
@@ -209,18 +209,18 @@
         android:layout_height="40dp"
         android:layout_marginStart="175dp"
         android:layout_marginTop="5dp"
-        app:layout_constraintStart_toEndOf="@+id/textView25"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        app:layout_constraintStart_toEndOf="@+id/tv_warnungen"
+        app:layout_constraintTop_toBottomOf="@+id/iv_novascore"
         app:srcCompat="@drawable/nutri_a" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/iv_novascore"
         android:layout_width="40dp"
         android:layout_height="67dp"
         android:layout_marginStart="175dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintStart_toEndOf="@+id/textView25"
-        app:layout_constraintTop_toBottomOf="@+id/textView22"
+        app:layout_constraintStart_toEndOf="@+id/tv_warnungen"
+        app:layout_constraintTop_toBottomOf="@+id/tv_origin"
         app:srcCompat="@drawable/nova" />
 
     <ImageView
@@ -229,8 +229,8 @@
         android:layout_height="67dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toBottomOf="@+id/textView22"
+        app:layout_constraintStart_toEndOf="@+id/iv_novascore"
+        app:layout_constraintTop_toBottomOf="@+id/tv_origin"
         app:srcCompat="@drawable/eco_score_a" />
 
     <View
@@ -269,7 +269,7 @@
         app:layout_constraintTop_toTopOf="@+id/view" />
 
     <TextView
-        android:id="@+id/textView31"
+        android:id="@+id/tv_inhaltsstoffe"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="2dp"
@@ -308,7 +308,7 @@
         app:layout_constraintTop_toTopOf="@+id/view2" />
 
     <TextView
-        android:id="@+id/textView33"
+        android:id="@+id/tv_portion"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
@@ -324,7 +324,7 @@
         android:layout_marginTop="2dp"
         android:layout_marginEnd="10dp"
         android:text="pro 100 g"
-        app:layout_constraintEnd_toStartOf="@+id/textView33"
+        app:layout_constraintEnd_toStartOf="@+id/tv_portion"
         app:layout_constraintTop_toTopOf="@+id/view2" />
 
     <TextView
@@ -348,7 +348,7 @@
         app:layout_constraintTop_toTopOf="@+id/view4" />
 
     <TextView
-        android:id="@+id/textView40"
+        android:id="@+id/tv_kohlenhydratPortion"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
@@ -358,17 +358,17 @@
         app:layout_constraintTop_toTopOf="@+id/view5" />
 
     <TextView
-        android:id="@+id/textView44"
+        android:id="@+id/tv_fettsaeuren100"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="10dp"
         android:text="... g"
-        app:layout_constraintEnd_toStartOf="@+id/textView45"
+        app:layout_constraintEnd_toStartOf="@+id/tv_fettsaeurenPortion"
         app:layout_constraintTop_toBottomOf="@+id/textView42" />
 
     <TextView
-        android:id="@+id/textView45"
+        android:id="@+id/tv_fettsaeurenPortion"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
@@ -378,17 +378,17 @@
         app:layout_constraintTop_toBottomOf="@+id/textView42" />
 
     <TextView
-        android:id="@+id/textView46"
+        android:id="@+id/tv_fett100"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="10dp"
         android:text="... g"
-        app:layout_constraintEnd_toStartOf="@+id/textView47"
+        app:layout_constraintEnd_toStartOf="@+id/tv_fettPortion"
         app:layout_constraintTop_toBottomOf="@+id/view4" />
 
     <TextView
-        android:id="@+id/textView47"
+        android:id="@+id/tv_fettPortion"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
@@ -398,7 +398,7 @@
         app:layout_constraintTop_toBottomOf="@+id/view4" />
 
     <TextView
-        android:id="@+id/textView41"
+        android:id="@+id/tv_energie100"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
@@ -448,27 +448,27 @@
         app:layout_constraintTop_toBottomOf="@+id/textView48" />
 
     <TextView
-        android:id="@+id/textView57"
+        android:id="@+id/tv_kohlenhydrat100"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="10dp"
         android:text="... g"
-        app:layout_constraintEnd_toStartOf="@+id/textView40"
+        app:layout_constraintEnd_toStartOf="@+id/tv_kohlenhydratPortion"
         app:layout_constraintTop_toTopOf="@+id/view5" />
 
     <TextView
-        android:id="@+id/textView58"
+        android:id="@+id/tv_salz100"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="10dp"
         android:text="... g"
-        app:layout_constraintEnd_toStartOf="@+id/textView65"
+        app:layout_constraintEnd_toStartOf="@+id/tv_salzPortion"
         app:layout_constraintTop_toTopOf="@+id/view6" />
 
     <TextView
-        android:id="@+id/textView65"
+        android:id="@+id/tv_salzPortion"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
@@ -478,17 +478,17 @@
         app:layout_constraintTop_toTopOf="@+id/view6" />
 
     <TextView
-        android:id="@+id/textView63"
+        android:id="@+id/tv_protein100"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="10dp"
         android:text="... g"
-        app:layout_constraintEnd_toStartOf="@+id/textView59"
+        app:layout_constraintEnd_toStartOf="@+id/tv_proteinPortion"
         app:layout_constraintTop_toBottomOf="@+id/view5" />
 
     <TextView
-        android:id="@+id/textView59"
+        android:id="@+id/tv_proteinPortion"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
@@ -498,24 +498,24 @@
         app:layout_constraintTop_toBottomOf="@+id/view5" />
 
     <TextView
-        android:id="@+id/textView60"
+        android:id="@+id/tv_zucker100"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="10dp"
         android:text="... g"
-        app:layout_constraintEnd_toStartOf="@+id/textView61"
-        app:layout_constraintTop_toBottomOf="@+id/textView57" />
+        app:layout_constraintEnd_toStartOf="@+id/tv_zuckerPortion"
+        app:layout_constraintTop_toBottomOf="@+id/tv_kohlenhydrat100" />
 
     <TextView
-        android:id="@+id/textView61"
+        android:id="@+id/tv_zuckerPortion"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="2dp"
         android:text="... g"
         app:layout_constraintEnd_toEndOf="@+id/view5"
-        app:layout_constraintTop_toBottomOf="@+id/textView40" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_kohlenhydratPortion" />
 
     <TextView
         android:id="@+id/textView62"
