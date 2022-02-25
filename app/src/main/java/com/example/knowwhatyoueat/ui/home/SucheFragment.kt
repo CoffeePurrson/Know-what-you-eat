@@ -14,9 +14,9 @@ import com.android.volley.toolbox.Volley
 import com.example.knowwhatyoueat.ProductView
 import com.example.knowwhatyoueat.databinding.FragmentSucheBinding
 
-class ScannerFragment : Fragment() {
+class SucheFragment : Fragment() {
 
-    private lateinit var scannerViewModel: ScannerViewModel
+    private lateinit var sucheViewModel: SucheViewModel
     private var _binding: FragmentSucheBinding? = null
 
     // This property is only valid between onCreateView and
@@ -28,14 +28,14 @@ class ScannerFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        scannerViewModel =
-            ViewModelProvider(this).get(ScannerViewModel::class.java)
+        sucheViewModel =
+            ViewModelProvider(this).get(SucheViewModel::class.java)
 
         _binding = FragmentSucheBinding.inflate(layoutInflater)
         val root: View = binding.root
 /*
         val textView: TextView = binding.textHome
-        scannerViewModel.text.observe(viewLifecycleOwner, Observer {
+        sucheViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
 
