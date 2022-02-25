@@ -14,7 +14,7 @@
       app:autoFocusButtonVisible="true"
       app:flashButtonColor="@android:color/white"
       app:flashButtonVisible="true"
-      app:maskColor="#4F000000" >
+      app:maskColor="#4F000000">
 
   </com.budiyev.android.codescanner.CodeScannerView>
 
