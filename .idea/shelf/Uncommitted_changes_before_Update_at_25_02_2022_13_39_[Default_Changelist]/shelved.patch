@@ -1,0 +1,54 @@
+Index: .idea/deploymentTargetDropDown.xml
+===================================================================
+diff --git a/.idea/deploymentTargetDropDown.xml b/.idea/deploymentTargetDropDown.xml
+deleted file mode 100644
+--- a/.idea/deploymentTargetDropDown.xml	(revision ba59e586e05e486b00af3b45e9361ce0a5003998)
++++ /dev/null	(revision ba59e586e05e486b00af3b45e9361ce0a5003998)
+@@ -1,17 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="deploymentTargetDropDown">
+-    <targetSelectedWithDropDown>
+-      <Target>
+-        <type value="QUICK_BOOT_TARGET" />
+-        <deviceKey>
+-          <Key>
+-            <type value="VIRTUAL_DEVICE_PATH" />
+-            <value value="C:\Users\Oliver\.android\avd\Pixel_3a_API_30_x86.avd" />
+-          </Key>
+-        </deviceKey>
+-      </Target>
+-    </targetSelectedWithDropDown>
+-    <timeTargetWasSelectedWithDropDown value="2022-01-25T14:06:07.993884600Z" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/Users/Oliver/AndroidStudioProjects/Knowwhatyoueat/app/src/main/res/layout/activity_main.xml\" value=\"0.41354166666666664\" />\r\n        <entry key=\"..\\:/Users/Oliver/AndroidStudioProjects/Knowwhatyoueat/app/src/main/res/layout/activity_product_view.xml\" value=\"0.41354166666666664\" />\r\n        <entry key=\"..\\:/Users/Oliver/AndroidStudioProjects/Knowwhatyoueat/app/src/main/res/layout/fragment_dashboard.xml\" value=\"0.3731481481481482\" />\r\n        <entry key=\"..\\:/Users/Oliver/AndroidStudioProjects/Knowwhatyoueat/app/src/main/res/layout/fragment_home.xml\" value=\"0.3731481481481482\" />\r\n        <entry key=\"..\\:/Users/Oliver/AndroidStudioProjects/Knowwhatyoueat/app/src/main/res/layout/fragment_notifications.xml\" value=\"0.3731481481481482\" />\r\n        <entry key=\"..\\:/Users/Oliver/AndroidStudioProjects/Knowwhatyoueat/app/src/main/res/layout/recyclerview_row.xml\" value=\"0.3731481481481482\" />\r\n        <entry key=\"..\\:/Users/Oliver/AndroidStudioProjects/Knowwhatyoueat/app/src/main/res/menu/bottom_nav_menu.xml\" value=\"0.3731481481481482\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"11\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision ba59e586e05e486b00af3b45e9361ce0a5003998)
++++ b/.idea/misc.xml	(date 1645527905828)
+@@ -10,6 +10,18 @@
+         <entry key="..\:/Users/Oliver/AndroidStudioProjects/Knowwhatyoueat/app/src/main/res/layout/fragment_notifications.xml" value="0.3731481481481482" />
+         <entry key="..\:/Users/Oliver/AndroidStudioProjects/Knowwhatyoueat/app/src/main/res/layout/recyclerview_row.xml" value="0.3731481481481482" />
+         <entry key="..\:/Users/Oliver/AndroidStudioProjects/Knowwhatyoueat/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3731481481481482" />
++        <entry key="..\:/Users/nessa/StudioProjects/Know-what-you-eat/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.236" />
++        <entry key="..\:/Users/nessa/StudioProjects/Know-what-you-eat/app/src/main/res/drawable/ic_baseline_control_camera_24.xml" value="0.236" />
++        <entry key="..\:/Users/nessa/StudioProjects/Know-what-you-eat/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.236" />
++        <entry key="..\:/Users/nessa/StudioProjects/Know-what-you-eat/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.236" />
++        <entry key="..\:/Users/nessa/StudioProjects/Know-what-you-eat/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.236" />
++        <entry key="..\:/Users/nessa/StudioProjects/Know-what-you-eat/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.236" />
++        <entry key="..\:/Users/nessa/StudioProjects/Know-what-you-eat/app/src/main/res/drawable/ic_launcher_background.xml" value="0.236" />
++        <entry key="..\:/Users/nessa/StudioProjects/Know-what-you-eat/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.236" />
++        <entry key="..\:/Users/nessa/StudioProjects/Know-what-you-eat/app/src/main/res/drawable/nutri_a_background.xml" value="0.236" />
++        <entry key="..\:/Users/nessa/StudioProjects/Know-what-you-eat/app/src/main/res/layout/activity_main.xml" value="0.1125" />
++        <entry key="..\:/Users/nessa/StudioProjects/Know-what-you-eat/app/src/main/res/layout/activity_product_view.xml" value="0.176" />
++        <entry key="..\:/Users/nessa/StudioProjects/Know-what-you-eat/app/src/main/res/layout/recyclerview_row.xml" value="0.24547101449275363" />
+       </map>
+     </option>
+   </component>

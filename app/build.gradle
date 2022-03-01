@@ -55,6 +55,9 @@ dependencies {
     // Added this for codeScanner:
     implementation 'com.github.yuriy-budiyev:code-scanner:2.1.1'
 
+    //Added for loading images:
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
 }
 /*
 repositories {

@@ -204,7 +204,7 @@
         app:tint="#FF3300" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/iv_nutriScore"
         android:layout_width="85dp"
         android:layout_height="40dp"
         android:layout_marginStart="175dp"
@@ -243,7 +243,7 @@
         android:background="#BCBCBC"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_nutriScore" />
 
     <View
         android:id="@+id/view2"
@@ -338,7 +338,7 @@
         app:layout_constraintTop_toTopOf="@+id/view4" />
 
     <TextView
-        android:id="@+id/textView39"
+        android:id="@+id/tv_energiePortion"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
@@ -404,7 +404,7 @@
         android:layout_marginTop="2dp"
         android:layout_marginEnd="10dp"
         android:text="... g"
-        app:layout_constraintEnd_toStartOf="@+id/textView39"
+        app:layout_constraintEnd_toStartOf="@+id/tv_energiePortion"
         app:layout_constraintTop_toTopOf="@+id/view4" />
 
     <TextView

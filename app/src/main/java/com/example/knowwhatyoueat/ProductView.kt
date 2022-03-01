@@ -7,6 +7,7 @@ import android.widget.ImageView
 import com.example.knowwhatyoueat.databinding.ActivityProductViewBinding
 import org.json.JSONObject
 
+
 class ProductView : AppCompatActivity() {
 
     private lateinit var binding: ActivityProductViewBinding
@@ -41,8 +42,10 @@ class ProductView : AppCompatActivity() {
 
             val naehrwerte = foodJSON.getJSONObject("nutriments")
             val energie100 = naehrwerte.getString("energy-kcal_100g")
+            val energiePortion = naehrwerte.getString("energy-kcal_serving")
             val energieEinheit = naehrwerte.getString("energy-kcal_unit")
             binding.tvEnergie100.text = energie100.toString() + energieEinheit.toString()
+            binding.tvEnergiePortion.text = energiePortion.toString() + energieEinheit.toString()
             val kohlenhydrat100 = naehrwerte.getString("carbohydrates_100g")
             val kohlenhydratPortion = naehrwerte.getString("carbohydrates_serving")
             val kohlenhydratEinheit = naehrwerte.getString("carbohydrates_unit")
@@ -74,6 +77,34 @@ class ProductView : AppCompatActivity() {
             binding.tvSalz100.text = salz100.toString() + salzEinheit.toString()
             binding.tvSalzPortion.text = salzPortion.toString() + salzEinheit.toString()
 
+            val produktImage = foodJSON.getString("image_front_small_url")
+            com.squareup.picasso.Picasso.get().load(produktImage).into(binding.ivProduktImage)
+
+            val novaScore = foodJSON.getString("nova_group")
+            if(novaScore == "1")
+                binding.ivNovascore.setImageResource(R.drawable.nova_group_1)
+            else if(novaScore == "2")
+                binding.ivNovascore.setImageResource(R.drawable.nova_group_2)
+            else if(novaScore == "3")
+                binding.ivNovascore.setImageResource(R.drawable.nova_group_3)
+            else if(novaScore=="4")
+                binding.ivNovascore.setImageResource(R.drawable.nova_group_4)
+            else
+                binding.ivNovascore.setImageResource(R.drawable.nova_group_unknown)
+
+            val nutriScore = foodJSON.getString("nutriscore_grade")
+            if(nutriScore == "a")
+                binding.ivNutriScore.setImageResource(R.drawable.nutriscore_a)
+            else if(nutriScore == "b")
+                binding.ivNutriScore.setImageResource(R.drawable.nutriscore_b)
+            else if(nutriScore == "c")
+                binding.ivNutriScore.setImageResource(R.drawable.nutriscore_c)
+            else if(nutriScore == "d")
+                binding.ivNutriScore.setImageResource(R.drawable.nutriscore_d)
+            else if(nutriScore == "e")
+                binding.ivNutriScore.setImageResource(R.drawable.nutriscore_e)
+            else
+                binding.ivNutriScore.setImageResource(R.drawable.nutriscore_unknown)
         }
 
         binding.Zurueck.setOnClickListener{ finish()  }
