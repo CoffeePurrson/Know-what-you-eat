@@ -45,7 +45,11 @@ class SucheFragment : Fragment() {
         binding.buTest.setOnClickListener {
             // Instantiate the RequestQueue.
             val queue = Volley.newRequestQueue(requireActivity().getApplicationContext())
-            val url = "https://world.openfoodfacts.org/api/v0/product/737628064502"
+            var url = "https://world.openfoodfacts.org/api/v0/product/737628064502"
+            //var url = "https://world.openfoodfacts.org/api/v0/product/7613037639858"
+            //var url = "https://world.openfoodfacts.org/api/v0/product/4001724038870"
+            //var url = "https://world.openfoodfacts.org/api/v0/product/4030387039849"
+            //var url = "https://world.openfoodfacts.org/api/v0/product/4000417931009"
 
             // Request a string response from the provided URL.
             val stringRequest = JsonObjectRequest(
