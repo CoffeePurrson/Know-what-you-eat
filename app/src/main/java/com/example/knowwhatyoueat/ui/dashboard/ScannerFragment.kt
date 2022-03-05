@@ -1,5 +1,6 @@
 package com.example.knowwhatyoueat.ui.dashboard
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
@@ -11,7 +12,12 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
 import com.budiyev.android.codescanner.*
+import com.example.knowwhatyoueat.ProductView
 import com.example.knowwhatyoueat.databinding.FragmentScannerBinding
 
 
@@ -26,8 +32,9 @@ class DashboardFragment : Fragment() {
     private lateinit var scannerViewModel: ScannerViewModel
     private var _binding: FragmentScannerBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+    private var url: String = ""
+    private var requestFinished: Boolean = false
+
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -41,13 +48,10 @@ class DashboardFragment : Fragment() {
         _binding = FragmentScannerBinding.inflate(layoutInflater)
         val root: View = binding.root
 
-//        val textView: TextView = binding.textDashboard
-//        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
-//            textView.text = it
-//        })
-
         scanner_view = binding.scannerView
         tv_textview = binding.tvTextView
+
+        requestFinished = false
 
         setupPermissions()
         codeScanner()
@@ -69,7 +73,10 @@ class DashboardFragment : Fragment() {
 
             decodeCallback = DecodeCallback {
                 requireActivity().runOnUiThread {
+                    // Wird nur bei einem erfolgreichen Scan aufgerufen:
                     tv_textview.text = it.text //Hier kommt der BARCODE her :D BARCODE=it.text
+                    url = "https://world.openfoodfacts.org/api/v0/product/" + it.text
+                    urlRequest()
                 }
             }
 
@@ -78,10 +85,6 @@ class DashboardFragment : Fragment() {
                     Log.e("Main", "Camera initialization error: ${it.message}")
                 }
             }
-        }
-
-        scanner_view.setOnClickListener {
-            codeScanner.startPreview()
         }
     }
 
@@ -131,5 +134,24 @@ class DashboardFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    fun urlRequest() {
+        if (url != "" && requestFinished == false) {
+            val queue = Volley.newRequestQueue(requireActivity().getApplicationContext())
+            // Request a string response from the provided URL.
+            val stringRequest = JsonObjectRequest(
+                Request.Method.GET, url, null,
+                { response ->
+                    val productViewActivity = Intent(getActivity(), ProductView::class.java)
+                    productViewActivity.putExtra("response", response.toString())
+                    startActivity(productViewActivity)
+                    //textView.text = "${response.toString().substring(0, 500)}"
+                },
+                {})
+            // Add the request to the RequestQueue.
+            queue.add(stringRequest)
+            requestFinished = true
+        }
     }
 }
