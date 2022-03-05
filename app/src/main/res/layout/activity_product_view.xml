@@ -224,7 +224,7 @@
         app:srcCompat="@drawable/nova" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/iv_ecoscore"
         android:layout_width="40dp"
         android:layout_height="67dp"
         android:layout_marginStart="5dp"
@@ -313,7 +313,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="2dp"
-        android:text="pro Portion ... g"
+        android:text="pro Portion"
         app:layout_constraintEnd_toEndOf="@+id/view2"
         app:layout_constraintTop_toTopOf="@+id/view2" />
 
