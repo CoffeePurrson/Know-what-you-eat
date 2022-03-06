@@ -1,14 +1,17 @@
 package com.example.knowwhatyoueat
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import android.widget.CompoundButton
+import android.widget.Switch
+import android.widget.Toast
+import android.widget.ToggleButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.knowwhatyoueat.databinding.ActivityMainBinding
-
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -50,9 +53,11 @@ class MainActivity : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
-        )
+            )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
+
 }
+
