@@ -18,22 +18,22 @@ import com.example.knowwhatyoueat.databinding.FragmentProfilBinding.inflate
 
 class ProfilFragment : Fragment() {
 
-    var check1: Boolean = false
-    var check2: Boolean = false
-    var check4: Boolean = false
-    var check5: Boolean = false
-    var check6: Boolean = false
-    var check7: Boolean = false
-    var check8: Boolean = false
-    var check9: Boolean = false
-    var check10: Boolean = false
-    var check11: Boolean = false
-    var check12: Boolean = false
-    var check13: Boolean = false
-    var check14: Boolean = false
-    var check18: Boolean = false
-    var check20: Boolean = false
-    var check21: Boolean = false
+    var check_Vegan: Boolean = false
+    var check_Vegetarisch: Boolean = false
+    var check_Ei: Boolean = false
+    var check_Senf: Boolean = false
+    var check_Erdnuss: Boolean = false
+    var check_Soja: Boolean = false
+    var check_Fisch: Boolean = false
+    var check_Weich: Boolean = false
+    var check_Kruste: Boolean = false
+    var check_Kuh: Boolean = false
+    var check_Lupine: Boolean = false
+    var check_Sellerie: Boolean = false
+    var check_Gluten: Boolean = false
+    var check_Schale: Boolean = false
+    var check_SchUSul: Boolean = false
+    var check_Sesam: Boolean = false
     private lateinit var profilViewModel: ProfilViewModel
     private var _binding: FragmentProfilBinding? = null
 
@@ -58,34 +58,244 @@ class ProfilFragment : Fragment() {
         })
 
  */
-        val sw1: Switch = binding.switch1
-        val sw2: Switch = binding.switch2
-        val sw4: Switch = binding.switch4
-        val sw5: Switch = binding.switch5
-        val sw6: Switch = binding.switch6
-        val sw7: Switch = binding.switch7
-        val sw8: Switch = binding.switch8
-        val sw9: Switch = binding.switch9
-        val sw10: Switch = binding.switch10
-        val sw11: Switch = binding.switch11
-        val sw12: Switch = binding.switch12
-        val sw13: Switch = binding.switch13
-        val sw14: Switch = binding.switch14
-        val sw18: Switch = binding.switch18
-        val sw20: Switch = binding.switch20
-        val sw21: Switch = binding.switch21
+        val sw_Vegan: Switch = binding.switchVegan
+        val sw_Vegetarisch: Switch = binding.switchVege
+        val sw_Ei: Switch = binding.switchEi
+        val sw_Senf: Switch = binding.switchSenf
+        val sw_Erdnuss: Switch = binding.switchErd
+        val sw_Soja: Switch = binding.switchSoja
+        val sw_Fisch: Switch = binding.switchFis
+        val sw_Weich: Switch = binding.switchWeich
+        val sw_Kruste: Switch = binding.switchKruste
+        val sw_Kuh: Switch = binding.switchKuh
+        val sw_Lupine: Switch = binding.switchLup
+        val sw_Sellerie: Switch = binding.switchSell
+        val sw_Gluten: Switch = binding.switchGlut
+        val sw_Schale: Switch = binding.switchSchale
+        val sw_SchUSul: Switch = binding.switchSchUSul
+        val sw_Sesam: Switch = binding.switchSes
 
-        binding.switch1.setOnCheckedChangeListener { _, isChecked ->
+        sw_Vegan.setOnCheckedChangeListener { _, isChecked ->
             Toast.makeText(
                 activity, "The Switch is " + if (isChecked) "on" else "off",
                 Toast.LENGTH_SHORT
             ).show()
             if (isChecked) {
                 //do stuff when Switch is ON
-                check1 = true
+                check_Vegan = true
             } else {
                 //do stuff when Switch if OFF
-                check1 = false
+                check_Vegan = false
+            }
+        }
+
+        sw_Vegetarisch.setOnCheckedChangeListener { _, isChecked ->
+            Toast.makeText(
+                activity, "The Switch is " + if (isChecked) "on" else "off",
+                Toast.LENGTH_SHORT
+            ).show()
+            if (isChecked) {
+                //do stuff when Switch is ON
+                check_Vegetarisch = true
+            } else {
+                //do stuff when Switch if OFF
+                check_Vegetarisch = false
+            }
+        }
+
+        sw_Ei.setOnCheckedChangeListener { _, isChecked ->
+            Toast.makeText(
+                activity, "The Switch is " + if (isChecked) "on" else "off",
+                Toast.LENGTH_SHORT
+            ).show()
+            if (isChecked) {
+                //do stuff when Switch is ON
+                check_Ei = true
+            } else {
+                //do stuff when Switch if OFF
+                check_Ei = false
+            }
+        }
+
+        sw_Senf.setOnCheckedChangeListener { _, isChecked ->
+            Toast.makeText(
+                activity, "The Switch is " + if (isChecked) "on" else "off",
+                Toast.LENGTH_SHORT
+            ).show()
+            if (isChecked) {
+                //do stuff when Switch is ON
+                check_Senf = true
+            } else {
+                //do stuff when Switch if OFF
+                check_Senf = false
+            }
+        }
+
+        sw_Erdnuss.setOnCheckedChangeListener { _, isChecked ->
+            Toast.makeText(
+                activity, "The Switch is " + if (isChecked) "on" else "off",
+                Toast.LENGTH_SHORT
+            ).show()
+            if (isChecked) {
+                //do stuff when Switch is ON
+                check_Erdnuss = true
+            } else {
+                //do stuff when Switch if OFF
+                check_Erdnuss = false
+            }
+        }
+
+        sw_Soja.setOnCheckedChangeListener { _, isChecked ->
+            Toast.makeText(
+                activity, "The Switch is " + if (isChecked) "on" else "off",
+                Toast.LENGTH_SHORT
+            ).show()
+            if (isChecked) {
+                //do stuff when Switch is ON
+                check_Soja = true
+            } else {
+                //do stuff when Switch if OFF
+                check_Soja = false
+            }
+        }
+
+        sw_Fisch.setOnCheckedChangeListener { _, isChecked ->
+            Toast.makeText(
+                activity, "The Switch is " + if (isChecked) "on" else "off",
+                Toast.LENGTH_SHORT
+            ).show()
+            if (isChecked) {
+                //do stuff when Switch is ON
+                check_Fisch = true
+            } else {
+                //do stuff when Switch if OFF
+                check_Fisch = false
+            }
+        }
+
+        sw_Weich.setOnCheckedChangeListener { _, isChecked ->
+            Toast.makeText(
+                activity, "The Switch is " + if (isChecked) "on" else "off",
+                Toast.LENGTH_SHORT
+            ).show()
+            if (isChecked) {
+                //do stuff when Switch is ON
+                check_Weich = true
+            } else {
+                //do stuff when Switch if OFF
+                check_Weich = false
+            }
+        }
+
+        sw_Kruste.setOnCheckedChangeListener { _, isChecked ->
+            Toast.makeText(
+                activity, "The Switch is " + if (isChecked) "on" else "off",
+                Toast.LENGTH_SHORT
+            ).show()
+            if (isChecked) {
+                //do stuff when Switch is ON
+                check_Kruste = true
+            } else {
+                //do stuff when Switch if OFF
+                check_Kruste = false
+            }
+        }
+
+        sw_Kuh.setOnCheckedChangeListener { _, isChecked ->
+            Toast.makeText(
+                activity, "The Switch is " + if (isChecked) "on" else "off",
+                Toast.LENGTH_SHORT
+            ).show()
+            if (isChecked) {
+                //do stuff when Switch is ON
+                check_Kuh = true
+            } else {
+                //do stuff when Switch if OFF
+                check_Kuh = false
+            }
+        }
+
+        sw_Lupine.setOnCheckedChangeListener { _, isChecked ->
+            Toast.makeText(
+                activity, "The Switch is " + if (isChecked) "on" else "off",
+                Toast.LENGTH_SHORT
+            ).show()
+            if (isChecked) {
+                //do stuff when Switch is ON
+                check_Lupine = true
+            } else {
+                //do stuff when Switch if OFF
+                check_Lupine = false
+            }
+        }
+
+        sw_Sellerie.setOnCheckedChangeListener { _, isChecked ->
+            Toast.makeText(
+                activity, "The Switch is " + if (isChecked) "on" else "off",
+                Toast.LENGTH_SHORT
+            ).show()
+            if (isChecked) {
+                //do stuff when Switch is ON
+                check_Sellerie = true
+            } else {
+                //do stuff when Switch if OFF
+                check_Sellerie = false
+            }
+        }
+
+        sw_Gluten.setOnCheckedChangeListener { _, isChecked ->
+            Toast.makeText(
+                activity, "The Switch is " + if (isChecked) "on" else "off",
+                Toast.LENGTH_SHORT
+            ).show()
+            if (isChecked) {
+                //do stuff when Switch is ON
+                check_Gluten = true
+            } else {
+                //do stuff when Switch if OFF
+                check_Gluten = false
+            }
+        }
+
+        sw_Schale.setOnCheckedChangeListener { _, isChecked ->
+            Toast.makeText(
+                activity, "The Switch is " + if (isChecked) "on" else "off",
+                Toast.LENGTH_SHORT
+            ).show()
+            if (isChecked) {
+                //do stuff when Switch is ON
+                check_Schale = true
+            } else {
+                //do stuff when Switch if OFF
+                check_Schale = false
+            }
+        }
+
+        sw_SchUSul.setOnCheckedChangeListener { _, isChecked ->
+            Toast.makeText(
+                activity, "The Switch is " + if (isChecked) "on" else "off",
+                Toast.LENGTH_SHORT
+            ).show()
+            if (isChecked) {
+                //do stuff when Switch is ON
+                check_SchUSul = true
+            } else {
+                //do stuff when Switch if OFF
+                check_SchUSul = false
+            }
+        }
+
+        sw_Sesam.setOnCheckedChangeListener { _, isChecked ->
+            Toast.makeText(
+                activity, "The Switch is " + if (isChecked) "on" else "off",
+                Toast.LENGTH_SHORT
+            ).show()
+            if (isChecked) {
+                //do stuff when Switch is ON
+                check_Sesam = true
+            } else {
+                //do stuff when Switch if OFF
+                check_Sesam = false
             }
         }
         return root
