@@ -20,8 +20,8 @@ class ProfilFragment : Fragment() {
 
     private lateinit var profilViewModel: ProfilViewModel
     private var _binding: FragmentProfilBinding? = null
-   // val sw1: Switch = binding.switch1
-    val testview : TextView = binding.textView
+
+    //val testview : TextView = binding.textView
     var check1: Boolean = false
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -37,6 +37,7 @@ class ProfilFragment : Fragment() {
 
         _binding = FragmentProfilBinding.inflate(inflater, container, false)
         val root: View = binding.root
+        val sw1: Switch = binding.switch1
 /*
         val textView: TextView = binding.textNotifications
         profilViewModel.text.observe(viewLifecycleOwner, Observer {
@@ -44,6 +45,19 @@ class ProfilFragment : Fragment() {
         })
 
  */
+        binding.switch1.setOnCheckedChangeListener { _, isChecked ->
+            Toast.makeText(
+                activity, "The Switch is " + if (isChecked) "on" else "off",
+                Toast.LENGTH_SHORT
+            ).show()
+            if (isChecked) {
+                //do stuff when Switch is ON
+                check1 = true
+            } else {
+                //do stuff when Switch if OFF
+                check1 = false
+            }
+        }
         return root
     }
 
@@ -52,7 +66,7 @@ class ProfilFragment : Fragment() {
         _binding = null
     }
 
-    /* fun onCheckedChanged1(buttonView: CompoundButton?, isChecked: Boolean) {
+    fun onCheckedChanged1(buttonView: CompoundButton?, isChecked: Boolean) {
         Toast.makeText(
             activity, "The Switch is " + if (isChecked) "on" else "off",
             Toast.LENGTH_SHORT
@@ -66,7 +80,7 @@ class ProfilFragment : Fragment() {
         }
 
     }
-    */
+
 
 
 
