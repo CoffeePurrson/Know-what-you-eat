@@ -1,5 +1,7 @@
 package com.example.knowwhatyoueat.ui.notifications
 
+import android.content.Context.MODE_PRIVATE
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +11,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.knowwhatyoueat.databinding.FragmentProfilBinding
 import android.widget.Switch
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.knowwhatyoueat.R
@@ -18,7 +19,7 @@ import com.example.knowwhatyoueat.databinding.FragmentProfilBinding.inflate
 
 class ProfilFragment : Fragment() {
 
-    var check_Vegan: Boolean = false
+    //var check_Vegan: Boolean = false
     var check_Vegetarisch: Boolean = false
     var check_Ei: Boolean = false
     var check_Senf: Boolean = false
@@ -41,6 +42,8 @@ class ProfilFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+    private var sharedPrefFile  = "ProfilPreferences"
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -58,6 +61,10 @@ class ProfilFragment : Fragment() {
         })
 
  */
+
+        val ProfilPreferences: SharedPreferences =
+            this.requireActivity().getSharedPreferences( sharedPrefFile,MODE_PRIVATE)
+
         val sw_Vegan: Switch = binding.switchVegan
         val sw_Vegetarisch: Switch = binding.switchVege
         val sw_Ei: Switch = binding.switchEi
@@ -75,17 +82,25 @@ class ProfilFragment : Fragment() {
         val sw_SchUSul: Switch = binding.switchSchUSul
         val sw_Sesam: Switch = binding.switchSes
 
+        val check_Vegan = ProfilPreferences.getBoolean("vegan", false)
+        sw_Vegan.setChecked(check_Vegan)
+
         sw_Vegan.setOnCheckedChangeListener { _, isChecked ->
             Toast.makeText(
                 activity, "The Switch is " + if (isChecked) "on" else "off",
                 Toast.LENGTH_SHORT
             ).show()
+            val editor:SharedPreferences.Editor =  ProfilPreferences.edit()
             if (isChecked) {
                 //do stuff when Switch is ON
-                check_Vegan = true
+                editor.putBoolean("vegan", true)
+                editor.apply()
+                editor.commit()
             } else {
                 //do stuff when Switch if OFF
-                check_Vegan = false
+                editor.putBoolean("vegan", false)
+                editor.apply()
+                editor.commit()
             }
         }
 
@@ -305,27 +320,4 @@ class ProfilFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
-    /* fun onCheckedChanged1(buttonView: CompoundButton?, isChecked: Boolean) {
-        Toast.makeText(
-            activity, "The Switch is " + if (isChecked) "on" else "off",
-            Toast.LENGTH_SHORT
-        ).show()
-        if (isChecked) {
-            //do stuff when Switch is ON
-            check1 = true
-        } else {
-            //do stuff when Switch if OFF
-            check1 = false
-        }
-
-    }
-    */
-
-
-
-
-
-
-
 }
