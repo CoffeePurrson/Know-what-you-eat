@@ -7,25 +7,25 @@
     tools:context=".ui.notifications.ProfilFragment">
 
     <Switch
-        android:id="@+id/switch20"
+        android:id="@+id/switchSes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text=""
         app:layout_constraintStart_toEndOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/switch21" />
+        app:layout_constraintTop_toBottomOf="@+id/switchSchUSul" />
 
     <Switch
-        android:id="@+id/switch21"
+        android:id="@+id/switchSchUSul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text=""
         app:layout_constraintStart_toEndOf="@+id/textView16"
-        app:layout_constraintTop_toBottomOf="@+id/switch14" />
+        app:layout_constraintTop_toBottomOf="@+id/switchSchale" />
 
     <Switch
-        android:id="@+id/switch18"
+        android:id="@+id/switchGlut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -78,13 +78,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <Switch
-        android:id="@+id/switch14"
+        android:id="@+id/switchSchale"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text=""
         app:layout_constraintStart_toEndOf="@+id/textView15"
-        app:layout_constraintTop_toBottomOf="@+id/switch18" />
+        app:layout_constraintTop_toBottomOf="@+id/switchGlut" />
 
     <TextView
         android:id="@+id/textView13"
@@ -94,11 +94,11 @@
         android:layout_marginTop="15dp"
         android:text="Weichtiere"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/switch8"
+        app:layout_constraintStart_toEndOf="@+id/switchErd"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <Switch
-        android:id="@+id/switch13"
+        android:id="@+id/switchWeich"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -106,7 +106,7 @@
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView13"
-        app:layout_constraintTop_toBottomOf="@+id/switch11" />
+        app:layout_constraintTop_toBottomOf="@+id/switchSoja" />
 
     <TextView
         android:id="@+id/textView12"
@@ -116,11 +116,11 @@
         android:layout_marginTop="155dp"
         android:text="Senf"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/switch4"
+        app:layout_constraintStart_toEndOf="@+id/switchEi"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Switch
-        android:id="@+id/switch12"
+        android:id="@+id/switchSenf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="155dp"
@@ -138,11 +138,11 @@
         android:layout_marginTop="15dp"
         android:text="Sojabohnen"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/switch5"
+        app:layout_constraintStart_toEndOf="@+id/switchEi"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <Switch
-        android:id="@+id/switch11"
+        android:id="@+id/switchSoja"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -150,7 +150,7 @@
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView11"
-        app:layout_constraintTop_toBottomOf="@+id/switch12" />
+        app:layout_constraintTop_toBottomOf="@+id/switchSenf" />
 
     <TextView
         android:id="@+id/textView10"
@@ -160,11 +160,11 @@
         android:layout_marginTop="15dp"
         android:text="Sellerie"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/switch9"
+        app:layout_constraintStart_toEndOf="@+id/switchLup"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <Switch
-        android:id="@+id/switch10"
+        android:id="@+id/switchSell"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -172,7 +172,7 @@
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/switch6" />
+        app:layout_constraintTop_toBottomOf="@+id/switchKuh" />
 
     <TextView
         android:id="@+id/textView9"
@@ -186,13 +186,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <Switch
-        android:id="@+id/switch9"
+        android:id="@+id/switchLup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text=""
         app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/switch7" />
+        app:layout_constraintTop_toBottomOf="@+id/switchKruste" />
 
     <TextView
         android:id="@+id/textView8"
@@ -206,13 +206,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <Switch
-        android:id="@+id/switch8"
+        android:id="@+id/switchFis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text=""
         app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/switch5" />
+        app:layout_constraintTop_toBottomOf="@+id/switchErd" />
 
     <TextView
         android:id="@+id/textView7"
@@ -226,13 +226,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <Switch
-        android:id="@+id/switch7"
+        android:id="@+id/switchKruste"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text=""
         app:layout_constraintStart_toEndOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/switch8" />
+        app:layout_constraintTop_toBottomOf="@+id/switchFis" />
 
     <TextView
         android:id="@+id/textView6"
@@ -242,11 +242,11 @@
         android:layout_marginTop="15dp"
         android:text="Kuhmilch"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/switch7"
+        app:layout_constraintStart_toEndOf="@+id/switchKruste"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <Switch
-        android:id="@+id/switch6"
+        android:id="@+id/switchKuh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -254,7 +254,7 @@
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/switch13" />
+        app:layout_constraintTop_toBottomOf="@+id/switchWeich" />
 
     <TextView
         android:id="@+id/textView4"
@@ -268,7 +268,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Switch
-        android:id="@+id/switch4"
+        android:id="@+id/switchEi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -277,13 +277,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <Switch
-        android:id="@+id/switch5"
+        android:id="@+id/switchErd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text=""
         app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/switch4" />
+        app:layout_constraintTop_toBottomOf="@+id/switchEi" />
 
     <TextView
         android:id="@+id/textView3"
@@ -308,7 +308,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Switch
-        android:id="@+id/switch2"
+        android:id="@+id/switchVegan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -317,13 +317,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/switchVege"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text=""
         app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/switch2" />
+        app:layout_constraintTop_toBottomOf="@+id/switchVegan" />
 
     <TextView
         android:textSize="16sp"
