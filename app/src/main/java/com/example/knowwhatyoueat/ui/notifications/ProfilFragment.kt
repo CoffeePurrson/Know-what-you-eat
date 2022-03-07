@@ -18,11 +18,25 @@ import com.example.knowwhatyoueat.databinding.FragmentProfilBinding.inflate
 
 class ProfilFragment : Fragment() {
 
+    var check1: Boolean = false
+    var check2: Boolean = false
+    var check4: Boolean = false
+    var check5: Boolean = false
+    var check6: Boolean = false
+    var check7: Boolean = false
+    var check8: Boolean = false
+    var check9: Boolean = false
+    var check10: Boolean = false
+    var check11: Boolean = false
+    var check12: Boolean = false
+    var check13: Boolean = false
+    var check14: Boolean = false
+    var check18: Boolean = false
+    var check20: Boolean = false
+    var check21: Boolean = false
     private lateinit var profilViewModel: ProfilViewModel
     private var _binding: FragmentProfilBinding? = null
-   // val sw1: Switch = binding.switch1
-    val testview : TextView = binding.textView
-    var check1: Boolean = false
+
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -44,6 +58,23 @@ class ProfilFragment : Fragment() {
         })
 
  */
+        val sw1: Switch = binding.switch1
+        val sw2: Switch = binding.switch2
+        val sw4: Switch = binding.switch4
+        val sw5: Switch = binding.switch5
+        val sw6: Switch = binding.switch6
+        val sw7: Switch = binding.switch7
+        val sw8: Switch = binding.switch8
+        val sw9: Switch = binding.switch9
+        val sw10: Switch = binding.switch10
+        val sw11: Switch = binding.switch11
+        val sw12: Switch = binding.switch12
+        val sw13: Switch = binding.switch13
+        val sw14: Switch = binding.switch14
+        val sw18: Switch = binding.switch18
+        val sw20: Switch = binding.switch20
+        val sw21: Switch = binding.switch21
+
         return root
     }
 
@@ -52,7 +83,7 @@ class ProfilFragment : Fragment() {
         _binding = null
     }
 
-    /* fun onCheckedChanged1(buttonView: CompoundButton?, isChecked: Boolean) {
+     fun onCheckedChanged1(buttonView: CompoundButton?, isChecked: Boolean) {
         Toast.makeText(
             activity, "The Switch is " + if (isChecked) "on" else "off",
             Toast.LENGTH_SHORT
@@ -66,7 +97,232 @@ class ProfilFragment : Fragment() {
         }
 
     }
-    */
+    fun onCheckedChanged2(buttonView: CompoundButton?, isChecked: Boolean) {
+        Toast.makeText(
+            activity, "The Switch is " + if (isChecked) "on" else "off",
+            Toast.LENGTH_SHORT
+        ).show()
+        if (isChecked) {
+            //do stuff when Switch is ON
+            check2 = true
+        } else {
+            //do stuff when Switch if OFF
+            check2 = false
+        }
+
+    }
+
+    fun onCheckedChanged4(buttonView: CompoundButton?, isChecked: Boolean) {
+        Toast.makeText(
+            activity, "The Switch is " + if (isChecked) "on" else "off",
+            Toast.LENGTH_SHORT
+        ).show()
+        if (isChecked) {
+            //do stuff when Switch is ON
+            check4 = true
+        } else {
+            //do stuff when Switch if OFF
+            check4 = false
+        }
+
+    }
+
+    fun onCheckedChanged5(buttonView: CompoundButton?, isChecked: Boolean) {
+        Toast.makeText(
+            activity, "The Switch is " + if (isChecked) "on" else "off",
+            Toast.LENGTH_SHORT
+        ).show()
+        if (isChecked) {
+            //do stuff when Switch is ON
+            check5 = true
+        } else {
+            //do stuff when Switch if OFF
+            check5 = false
+        }
+
+    }
+
+    fun onCheckedChanged6(buttonView: CompoundButton?, isChecked: Boolean) {
+        Toast.makeText(
+            activity, "The Switch is " + if (isChecked) "on" else "off",
+            Toast.LENGTH_SHORT
+        ).show()
+        if (isChecked) {
+            //do stuff when Switch is ON
+            check6 = true
+        } else {
+            //do stuff when Switch if OFF
+            check6 = false
+        }
+
+    }
+
+    fun onCheckedChanged7(buttonView: CompoundButton?, isChecked: Boolean) {
+        Toast.makeText(
+            activity, "The Switch is " + if (isChecked) "on" else "off",
+            Toast.LENGTH_SHORT
+        ).show()
+        if (isChecked) {
+            //do stuff when Switch is ON
+            check7 = true
+        } else {
+            //do stuff when Switch if OFF
+            check7 = false
+        }
+
+    }
+
+    fun onCheckedChanged8(buttonView: CompoundButton?, isChecked: Boolean) {
+        Toast.makeText(
+            activity, "The Switch is " + if (isChecked) "on" else "off",
+            Toast.LENGTH_SHORT
+        ).show()
+        if (isChecked) {
+            //do stuff when Switch is ON
+            check8 = true
+        } else {
+            //do stuff when Switch if OFF
+            check8 = false
+        }
+
+    }
+
+    fun onCheckedChanged9(buttonView: CompoundButton?, isChecked: Boolean) {
+        Toast.makeText(
+            activity, "The Switch is " + if (isChecked) "on" else "off",
+            Toast.LENGTH_SHORT
+        ).show()
+        if (isChecked) {
+            //do stuff when Switch is ON
+            check9 = true
+        } else {
+            //do stuff when Switch if OFF
+            check9 = false
+        }
+
+    }
+
+    fun onCheckedChanged10(buttonView: CompoundButton?, isChecked: Boolean) {
+        Toast.makeText(
+            activity, "The Switch is " + if (isChecked) "on" else "off",
+            Toast.LENGTH_SHORT
+        ).show()
+        if (isChecked) {
+            //do stuff when Switch is ON
+            check10 = true
+        } else {
+            //do stuff when Switch if OFF
+            check10 = false
+        }
+
+    }
+
+    fun onCheckedChanged11(buttonView: CompoundButton?, isChecked: Boolean) {
+        Toast.makeText(
+            activity, "The Switch is " + if (isChecked) "on" else "off",
+            Toast.LENGTH_SHORT
+        ).show()
+        if (isChecked) {
+            //do stuff when Switch is ON
+            check11 = true
+        } else {
+            //do stuff when Switch if OFF
+            check11 = false
+        }
+
+    }
+
+    fun onCheckedChanged12(buttonView: CompoundButton?, isChecked: Boolean) {
+        Toast.makeText(
+            activity, "The Switch is " + if (isChecked) "on" else "off",
+            Toast.LENGTH_SHORT
+        ).show()
+        if (isChecked) {
+            //do stuff when Switch is ON
+            check12 = true
+        } else {
+            //do stuff when Switch if OFF
+            check12 = false
+        }
+
+    }
+
+    fun onCheckedChanged13(buttonView: CompoundButton?, isChecked: Boolean) {
+        Toast.makeText(
+            activity, "The Switch is " + if (isChecked) "on" else "off",
+            Toast.LENGTH_SHORT
+        ).show()
+        if (isChecked) {
+            //do stuff when Switch is ON
+            check13 = true
+        } else {
+            //do stuff when Switch if OFF
+            check13 = false
+        }
+
+    }
+
+    fun onCheckedChanged14(buttonView: CompoundButton?, isChecked: Boolean) {
+        Toast.makeText(
+            activity, "The Switch is " + if (isChecked) "on" else "off",
+            Toast.LENGTH_SHORT
+        ).show()
+        if (isChecked) {
+            //do stuff when Switch is ON
+            check14 = true
+        } else {
+            //do stuff when Switch if OFF
+            check14 = false
+        }
+
+    }
+
+    fun onCheckedChanged18(buttonView: CompoundButton?, isChecked: Boolean) {
+        Toast.makeText(
+            activity, "The Switch is " + if (isChecked) "on" else "off",
+            Toast.LENGTH_SHORT
+        ).show()
+        if (isChecked) {
+            //do stuff when Switch is ON
+            check18 = true
+        } else {
+            //do stuff when Switch if OFF
+            check18 = false
+        }
+
+    }
+
+    fun onCheckedChanged20(buttonView: CompoundButton?, isChecked: Boolean) {
+        Toast.makeText(
+            activity, "The Switch is " + if (isChecked) "on" else "off",
+            Toast.LENGTH_SHORT
+        ).show()
+        if (isChecked) {
+            //do stuff when Switch is ON
+            check20 = true
+        } else {
+            //do stuff when Switch if OFF
+            check20 = false
+        }
+
+    }
+
+    fun onCheckedChanged21(buttonView: CompoundButton?, isChecked: Boolean) {
+        Toast.makeText(
+            activity, "The Switch is " + if (isChecked) "on" else "off",
+            Toast.LENGTH_SHORT
+        ).show()
+        if (isChecked) {
+            //do stuff when Switch is ON
+            check21 = true
+        } else {
+            //do stuff when Switch if OFF
+            check21 = false
+        }
+
+    }
+
+
 
 
 
