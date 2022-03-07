@@ -37,8 +37,6 @@ class ProfilFragment : Fragment() {
     private lateinit var profilViewModel: ProfilViewModel
     private var _binding: FragmentProfilBinding? = null
 
-    //val testview : TextView = binding.textView
-    var check1: Boolean = false
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -53,7 +51,6 @@ class ProfilFragment : Fragment() {
 
         _binding = FragmentProfilBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        val sw1: Switch = binding.switch1
 /*
         val textView: TextView = binding.textNotifications
         profilViewModel.text.observe(viewLifecycleOwner, Observer {
