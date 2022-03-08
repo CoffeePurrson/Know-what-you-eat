@@ -3,9 +3,12 @@ package com.example.knowwhatyoueat
 import android.annotation.SuppressLint
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.widget.ImageViewCompat
 import com.example.knowwhatyoueat.databinding.ActivityProductViewBinding
 import org.json.JSONArray
 import org.json.JSONObject
@@ -52,9 +55,20 @@ class ProductView : AppCompatActivity() {
                 val layout:LinearLayout = bindingWarnungen.warnungenLayout
                 for (i in 0 until allergenArray.length()) {
                     if(allergenArray[i] == allergenTag){
+                        //Horizontales LinearLayout erstellen
+                        val neuesLayout = LinearLayout(this)
+                        neuesLayout.setOrientation(LinearLayout.HORIZONTAL)
+                        //Imageview erstellen
+                        val warnungBild = ImageView(this)
+                        warnungBild.setImageResource(resources.getIdentifier("@android:drawable/ic_dialog_alert", null, packageName))
+                        warnungBild.setColorFilter(ContextCompat.getColor(this,R.color.allergieWarnung))
+                        //Warnungstext erstellen
                         val warnung = TextView(this)
                         warnung.text="Enthält: $allergenName!"
-                        layout.addView(warnung)
+                        //Warnungstext zu layout hinzufügen
+                        neuesLayout.addView(warnungBild)
+                        neuesLayout.addView(warnung)
+                        layout.addView(neuesLayout)
                     }
                 }
             }
