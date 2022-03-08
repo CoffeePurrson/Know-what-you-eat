@@ -54,13 +54,6 @@ class ProfilFragment : Fragment() {
 
         _binding = FragmentProfilBinding.inflate(inflater, container, false)
         val root: View = binding.root
-/*
-        val textView: TextView = binding.textNotifications
-        profilViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-
- */
 
         val ProfilPreferences: SharedPreferences =
             this.requireActivity().getSharedPreferences( sharedPrefFile,MODE_PRIVATE)
@@ -105,7 +98,7 @@ class ProfilFragment : Fragment() {
         }
 
         val check_Vegetarisch = ProfilPreferences.getBoolean("vegetarisch", false)
-        sw_Vegan.setChecked(check_Vegetarisch)
+        sw_Vegetarisch.setChecked(check_Vegetarisch)
 
         sw_Vegetarisch.setOnCheckedChangeListener { _, isChecked ->
             Toast.makeText(
@@ -127,7 +120,7 @@ class ProfilFragment : Fragment() {
         }
 
         val check_Ei = ProfilPreferences.getBoolean("ei", false)
-        sw_Vegan.setChecked(check_Ei)
+        sw_Ei.setChecked(check_Ei)
 
         sw_Ei.setOnCheckedChangeListener { _, isChecked ->
             Toast.makeText(
@@ -147,7 +140,7 @@ class ProfilFragment : Fragment() {
         }
 
         val check_Senf = ProfilPreferences.getBoolean("senf", false)
-        sw_Vegan.setChecked(check_Senf)
+        sw_Senf.setChecked(check_Senf)
 
         sw_Senf.setOnCheckedChangeListener { _, isChecked ->
             Toast.makeText(
@@ -167,7 +160,7 @@ class ProfilFragment : Fragment() {
         }
 
         val check_Erdnuss = ProfilPreferences.getBoolean("erdnuss", false)
-        sw_Vegan.setChecked(check_Erdnuss)
+        sw_Erdnuss.setChecked(check_Erdnuss)
 
         sw_Erdnuss.setOnCheckedChangeListener { _, isChecked ->
             Toast.makeText(
@@ -187,7 +180,7 @@ class ProfilFragment : Fragment() {
         }
 
         val check_Soja = ProfilPreferences.getBoolean("soja", false)
-        sw_Vegan.setChecked(check_Soja)
+        sw_Soja.setChecked(check_Soja)
 
         sw_Soja.setOnCheckedChangeListener { _, isChecked ->
             Toast.makeText(
@@ -196,7 +189,7 @@ class ProfilFragment : Fragment() {
             ).show()
             val editor:SharedPreferences.Editor =  ProfilPreferences.edit()
             if (isChecked) {
-                /editor.putBoolean("soja", true)
+                editor.putBoolean("soja", true)
                 editor.apply()
                 editor.commit()
             } else {
@@ -207,7 +200,7 @@ class ProfilFragment : Fragment() {
         }
 
         val check_Fisch = ProfilPreferences.getBoolean("fisch", false)
-        sw_Vegan.setChecked(check_Fisch)
+        sw_Fisch.setChecked(check_Fisch)
 
         sw_Fisch.setOnCheckedChangeListener { _, isChecked ->
             Toast.makeText(
@@ -227,7 +220,7 @@ class ProfilFragment : Fragment() {
         }
 
         val check_Weich = ProfilPreferences.getBoolean("weich", false)
-        sw_Vegan.setChecked(check_Weich)
+        sw_Weich.setChecked(check_Weich)
 
         sw_Weich.setOnCheckedChangeListener { _, isChecked ->
             Toast.makeText(
@@ -247,7 +240,7 @@ class ProfilFragment : Fragment() {
         }
 
         val check_Kruste = ProfilPreferences.getBoolean("kruste", false)
-        sw_Vegan.setChecked(check_Kruste)
+        sw_Kruste.setChecked(check_Kruste)
 
         sw_Kruste.setOnCheckedChangeListener { _, isChecked ->
             Toast.makeText(
@@ -267,7 +260,7 @@ class ProfilFragment : Fragment() {
         }
 
         val check_Kuh = ProfilPreferences.getBoolean("kuh", false)
-        sw_Vegan.setChecked(check_Kuh)
+        sw_Kuh.setChecked(check_Kuh)
 
         sw_Kuh.setOnCheckedChangeListener { _, isChecked ->
             Toast.makeText(
@@ -287,7 +280,7 @@ class ProfilFragment : Fragment() {
         }
 
         val check_Lupine = ProfilPreferences.getBoolean("lupine", false)
-        sw_Vegan.setChecked(check_Lupine)
+        sw_Lupine.setChecked(check_Lupine)
 
         sw_Lupine.setOnCheckedChangeListener { _, isChecked ->
             Toast.makeText(
@@ -307,7 +300,7 @@ class ProfilFragment : Fragment() {
         }
 
         val check_Sellerie = ProfilPreferences.getBoolean("sellerie", false)
-        sw_Vegan.setChecked(check_Sellerie)
+        sw_Sellerie.setChecked(check_Sellerie)
 
         sw_Sellerie.setOnCheckedChangeListener { _, isChecked ->
             Toast.makeText(
@@ -327,7 +320,7 @@ class ProfilFragment : Fragment() {
         }
 
         val check_Gluten = ProfilPreferences.getBoolean("gluten", false)
-        sw_Vegan.setChecked(check_Gluten)
+        sw_Gluten.setChecked(check_Gluten)
 
         sw_Gluten.setOnCheckedChangeListener { _, isChecked ->
             Toast.makeText(
@@ -347,7 +340,7 @@ class ProfilFragment : Fragment() {
         }
 
         val check_Schale = ProfilPreferences.getBoolean("schale", false)
-        sw_Vegan.setChecked(check_Schale)
+        sw_Schale.setChecked(check_Schale)
 
         sw_Schale.setOnCheckedChangeListener { _, isChecked ->
             Toast.makeText(
@@ -367,7 +360,7 @@ class ProfilFragment : Fragment() {
         }
 
         val check_SchUSul = ProfilPreferences.getBoolean("SchUSul", false)
-        sw_Vegan.setChecked(check_SchUSul)
+        sw_SchUSul.setChecked(check_SchUSul)
 
         sw_SchUSul.setOnCheckedChangeListener { _, isChecked ->
             Toast.makeText(
@@ -387,7 +380,7 @@ class ProfilFragment : Fragment() {
         }
 
         val check_Sesam = ProfilPreferences.getBoolean("sesam", false)
-        sw_Vegan.setChecked(check_Sesam)
+        sw_Sesam.setChecked(check_Sesam)
 
         sw_Sesam.setOnCheckedChangeListener { _, isChecked ->
             Toast.makeText(
