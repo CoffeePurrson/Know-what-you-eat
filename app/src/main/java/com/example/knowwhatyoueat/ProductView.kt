@@ -15,14 +15,18 @@ class ProductView : AppCompatActivity() {
 
     private lateinit var binding: ActivityProductViewBinding
     private var sharedPrefFile  = "ProfilPreferences"
-    val ProfilPreferences: SharedPreferences =
-        this.getSharedPreferences( sharedPrefFile, MODE_PRIVATE)
+    //val ProfilPreferences: SharedPreferences =
+    //    getSharedPreferences( sharedPrefFile, MODE_PRIVATE)
+        //getSharedPreferences( sharedPrefFile, MODE_PRIVATE)
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityProductViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val ProfilPreferences: SharedPreferences =
+            getSharedPreferences( sharedPrefFile, MODE_PRIVATE)
 
         val z =
             if (intent.hasExtra("response"))
@@ -33,7 +37,22 @@ class ProductView : AppCompatActivity() {
         val jsonObj = JSONObject(z?.substring(z?.indexOf("{"), z?.lastIndexOf("}") + 1))
         val foodJSON = jsonObj.getJSONObject("product")
 
-        val allergensTags = jsonObj.getJSONArray("allergens_tags")
+        val allergensTags = foodJSON.getJSONArray("allergens_tags")
+
+        fun filter(
+            keyValue: String,
+            allergenTag: String,
+            allergenArray: JSONArray,
+            allergenName: String) {
+            if (ProfilPreferences.getBoolean(keyValue, false)) {
+                for (i in 0 until allergenArray.length()) {
+                    if(allergenArray[i] == allergenTag){
+                        binding.textView26.text = "Enthält: $allergenName!"
+                    }else
+                        binding.textView26.text = "Keine Übereinstimmungen"
+                }
+            }
+        }
 
         filter("kuh","en:milk", allergensTags,"Milch")
 
@@ -218,7 +237,7 @@ class ProductView : AppCompatActivity() {
 
         binding.Zurueck.setOnClickListener{ finish()  }
     }
-
+    /*
     fun filter(
         keyValue: String,
         allergenTag: String,
@@ -234,4 +253,5 @@ class ProductView : AppCompatActivity() {
         }
     }
 
+     */
 }
