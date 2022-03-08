@@ -50,6 +50,14 @@ class SucheFragment : Fragment() {
             //var url = "https://world.openfoodfacts.org/api/v0/product/4001724038870"
             //var url = "https://world.openfoodfacts.org/api/v0/product/4030387039849"
             //var url = "https://world.openfoodfacts.org/api/v0/product/4000417931009"
+            //für Nüsse:
+            //var url = "https://world.openfoodfacts.org/api/v0/product/3168930010265"
+            //für Krusten- und Weichtiere:
+            //var url ="https://world.openfoodfacts.org/api/v0/product/3270160694631"
+            //für Fisch:
+            //var url ="https://world.openfoodfacts.org/api/v0/product/20155087"
+            //für Lupine:
+            //var url = "https://world.openfoodfacts.org/api/v0/product/3600900006682"
 
             // Request a string response from the provided URL.
             val stringRequest = JsonObjectRequest(
