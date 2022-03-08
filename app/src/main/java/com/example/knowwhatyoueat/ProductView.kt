@@ -25,6 +25,9 @@ class ProductView : AppCompatActivity() {
         binding = ActivityProductViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        var booleanForAllergenView1: Boolean = false
+        var booleanForAllergenView2: Boolean = false
+
         val ProfilPreferences: SharedPreferences =
             getSharedPreferences(sharedPrefFile, MODE_PRIVATE)
 
@@ -47,10 +50,18 @@ class ProductView : AppCompatActivity() {
             if (ProfilPreferences.getBoolean(keyValue, false)) {
                 for (i in 0 until allergenArray.length()) {
                     if(allergenArray[i] == allergenTag){
-                        binding.textView26.text = "Enthält: $allergenName!"
-                        break
-                    }else
-                        binding.textView26.text = "Keine Übereinstimmungen"
+                        if (booleanForAllergenView1 == true && booleanForAllergenView2 == true){
+                            break
+                        }
+                        if (booleanForAllergenView1 == true && booleanForAllergenView2 == false){
+                            binding.textView27.text = "Enthält: $allergenName!"
+                            booleanForAllergenView2 = true
+                        }
+                        if(booleanForAllergenView1 == false && booleanForAllergenView2 == false){
+                            binding.textView26.text = "Enthält: $allergenName!"
+                            booleanForAllergenView1 = true
+                        }
+                    }
                 }
             }
         }
