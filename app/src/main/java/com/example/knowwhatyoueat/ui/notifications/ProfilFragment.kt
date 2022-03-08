@@ -359,7 +359,7 @@ class ProfilFragment : Fragment() {
             }
         }
 
-        val check_SchUSul = ProfilPreferences.getBoolean("SchUSul", false)
+        val check_SchUSul = ProfilPreferences.getBoolean("schUSul", false)
         sw_SchUSul.setChecked(check_SchUSul)
 
         sw_SchUSul.setOnCheckedChangeListener { _, isChecked ->
