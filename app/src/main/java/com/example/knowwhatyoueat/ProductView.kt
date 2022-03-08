@@ -48,6 +48,7 @@ class ProductView : AppCompatActivity() {
                 for (i in 0 until allergenArray.length()) {
                     if(allergenArray[i] == allergenTag){
                         binding.textView26.text = "Enthält: $allergenName!"
+                        break
                     }else
                         binding.textView26.text = "Keine Übereinstimmungen"
                 }
