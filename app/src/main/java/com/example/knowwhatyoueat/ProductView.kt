@@ -2,12 +2,12 @@ package com.example.knowwhatyoueat
 
 import android.annotation.SuppressLint
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.example.knowwhatyoueat.databinding.ActivityProductViewBinding
 import org.json.JSONArray
-import org.json.JSONException
 import org.json.JSONObject
 
 
@@ -48,19 +48,13 @@ class ProductView : AppCompatActivity() {
             allergenArray: JSONArray,
             allergenName: String) {
             if (ProfilPreferences.getBoolean(keyValue, false)) {
+                val bindingWarnungen = binding.includeWarnungen
+                val layout:LinearLayout = bindingWarnungen.warnungenLayout
                 for (i in 0 until allergenArray.length()) {
                     if(allergenArray[i] == allergenTag){
-                        if (booleanForAllergenView1 == true && booleanForAllergenView2 == true){
-                            break
-                        }
-                        if (booleanForAllergenView1 == true && booleanForAllergenView2 == false){
-                            binding.textView27.text = "Enthält: $allergenName!"
-                            booleanForAllergenView2 = true
-                        }
-                        if(booleanForAllergenView1 == false && booleanForAllergenView2 == false){
-                            binding.textView26.text = "Enthält: $allergenName!"
-                            booleanForAllergenView1 = true
-                        }
+                        val warnung = TextView(this)
+                        warnung.text="Enthält: $allergenName!"
+                        layout.addView(warnung)
                     }
                 }
             }
