@@ -54,13 +54,6 @@ class ProfilFragment : Fragment() {
 
         _binding = FragmentProfilBinding.inflate(inflater, container, false)
         val root: View = binding.root
-/*
-        val textView: TextView = binding.textNotifications
-        profilViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-
- */
 
         val ProfilPreferences: SharedPreferences =
             this.requireActivity().getSharedPreferences( sharedPrefFile,MODE_PRIVATE)
@@ -196,7 +189,7 @@ class ProfilFragment : Fragment() {
             ).show()
             val editor:SharedPreferences.Editor =  ProfilPreferences.edit()
             if (isChecked) {
-                /editor.putBoolean("soja", true)
+                editor.putBoolean("soja", true)
                 editor.apply()
                 editor.commit()
             } else {
