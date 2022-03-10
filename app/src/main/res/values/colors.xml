@@ -11,4 +11,5 @@
     <color name="dark1_green">#6aa84f</color>
     <color name="dark2_green">#38761d</color>
     <color name="allergieWarnung">#FF3300</color>
+    <color name="lifestyleWarnung">#FFDF03</color>
 </resources>

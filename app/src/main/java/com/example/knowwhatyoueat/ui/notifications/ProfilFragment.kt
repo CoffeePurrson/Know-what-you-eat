@@ -14,27 +14,11 @@ import android.widget.Switch
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.knowwhatyoueat.R
+import com.example.knowwhatyoueat.databinding.FragmentProfilBinding.bind
 //import kotlinx.android.synthetic.main.fragment_profil.*
 import com.example.knowwhatyoueat.databinding.FragmentProfilBinding.inflate
 
 class ProfilFragment : Fragment() {
-
-    //var check_Vegan: Boolean = false
-    var check_Vegetarisch: Boolean = false
-    var check_Ei: Boolean = false
-    var check_Senf: Boolean = false
-    var check_Erdnuss: Boolean = false
-    var check_Soja: Boolean = false
-    var check_Fisch: Boolean = false
-    var check_Weich: Boolean = false
-    var check_Kruste: Boolean = false
-    var check_Kuh: Boolean = false
-    var check_Lupine: Boolean = false
-    var check_Sellerie: Boolean = false
-    var check_Gluten: Boolean = false
-    var check_Schale: Boolean = false
-    var check_SchUSul: Boolean = false
-    var check_Sesam: Boolean = false
     private lateinit var profilViewModel: ProfilViewModel
     private var _binding: FragmentProfilBinding? = null
 
@@ -42,7 +26,9 @@ class ProfilFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+    //SharedPreferences
     private var sharedPrefFile  = "ProfilPreferences"
+    private lateinit var ProfilPreferences: SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -58,347 +44,62 @@ class ProfilFragment : Fragment() {
         val ProfilPreferences: SharedPreferences =
             this.requireActivity().getSharedPreferences( sharedPrefFile,MODE_PRIVATE)
 
-        val sw_Vegan: Switch = binding.switchVegan
-        val sw_Vegetarisch: Switch = binding.switchVege
-        val sw_Ei: Switch = binding.switchEi
-        val sw_Senf: Switch = binding.switchSenf
-        val sw_Erdnuss: Switch = binding.switchErd
-        val sw_Soja: Switch = binding.switchSoja
-        val sw_Fisch: Switch = binding.switchFis
-        val sw_Weich: Switch = binding.switchWeich
-        val sw_Kruste: Switch = binding.switchKruste
-        val sw_Kuh: Switch = binding.switchKuh
-        val sw_Lupine: Switch = binding.switchLup
-        val sw_Sellerie: Switch = binding.switchSell
-        val sw_Gluten: Switch = binding.switchGlut
-        val sw_Schale: Switch = binding.switchSchale
-        val sw_SchUSul: Switch = binding.switchSchUSul
-        val sw_Sesam: Switch = binding.switchSes
-
-        val check_Vegan = ProfilPreferences.getBoolean("vegan", false)
-        sw_Vegan.setChecked(check_Vegan)
-
-        sw_Vegan.setOnCheckedChangeListener { _, isChecked ->
-            Toast.makeText(
-                activity, "Vegan wurde " + if (isChecked) "angewählt" else "abgewählt",
-                Toast.LENGTH_SHORT
-            ).show()
-            val editor:SharedPreferences.Editor =  ProfilPreferences.edit()
-            if (isChecked) {
-                //do stuff when Switch is ON
-                editor.putBoolean("vegan", true)
-                editor.apply()
-                editor.commit()
-            } else {
-                //do stuff when Switch if OFF
-                editor.putBoolean("vegan", false)
-                editor.apply()
-                editor.commit()
-            }
-        }
-
-        val check_Vegetarisch = ProfilPreferences.getBoolean("vegetarisch", false)
-        sw_Vegetarisch.setChecked(check_Vegetarisch)
-
-        sw_Vegetarisch.setOnCheckedChangeListener { _, isChecked ->
-            Toast.makeText(
-                activity, "Vegetarisch wurde " + if (isChecked) "angewählt" else "abgewählt",
-                Toast.LENGTH_SHORT
-            ).show()
-            val editor:SharedPreferences.Editor =  ProfilPreferences.edit()
-            if (isChecked) {
-                //do stuff when Switch is ON
-                editor.putBoolean("vegetarisch", true)
-                editor.apply()
-                editor.commit()
-            } else {
-                //do stuff when Switch if OFF
-                editor.putBoolean("vegetarisch", false)
-                editor.apply()
-                editor.commit()
-            }
-        }
-
-        val check_Ei = ProfilPreferences.getBoolean("ei", false)
-        sw_Ei.setChecked(check_Ei)
-
-        sw_Ei.setOnCheckedChangeListener { _, isChecked ->
-            Toast.makeText(
-                activity, "Ei wurde " + if (isChecked) "angewählt" else "abgewählt",
-                Toast.LENGTH_SHORT
-            ).show()
-            val editor:SharedPreferences.Editor =  ProfilPreferences.edit()
-            if (isChecked) {
-                editor.putBoolean("ei", true)
-                editor.apply()
-                editor.commit()
-            } else {
-                editor.putBoolean("ei", false)
-                editor.apply()
-                editor.commit()
-            }
-        }
-
-        val check_Senf = ProfilPreferences.getBoolean("senf", false)
-        sw_Senf.setChecked(check_Senf)
-
-        sw_Senf.setOnCheckedChangeListener { _, isChecked ->
-            Toast.makeText(
-                activity, "Senf wurde " + if (isChecked) "angewählt" else "abgewählt",
-                Toast.LENGTH_SHORT
-            ).show()
-            val editor:SharedPreferences.Editor =  ProfilPreferences.edit()
-            if (isChecked) {
-                editor.putBoolean("senf", true)
-                editor.apply()
-                editor.commit()
-            } else {
-                editor.putBoolean("senf", false)
-                editor.apply()
-                editor.commit()
-            }
-        }
-
-        val check_Erdnuss = ProfilPreferences.getBoolean("erdnuss", false)
-        sw_Erdnuss.setChecked(check_Erdnuss)
-
-        sw_Erdnuss.setOnCheckedChangeListener { _, isChecked ->
-            Toast.makeText(
-                activity, "Erdnuss wurde " + if (isChecked) "angewählt" else "abgewählt",
-                Toast.LENGTH_SHORT
-            ).show()
-            val editor:SharedPreferences.Editor =  ProfilPreferences.edit()
-            if (isChecked) {
-                editor.putBoolean("erdnuss", true)
-                editor.apply()
-                editor.commit()
-            } else {
-                editor.putBoolean("erdnuss", false)
-                editor.apply()
-                editor.commit()
-            }
-        }
-
-        val check_Soja = ProfilPreferences.getBoolean("soja", false)
-        sw_Soja.setChecked(check_Soja)
-
-        sw_Soja.setOnCheckedChangeListener { _, isChecked ->
-            Toast.makeText(
-                activity, "Soja wurde " + if (isChecked) "angewählt" else "abgewählt",
-                Toast.LENGTH_SHORT
-            ).show()
-            val editor:SharedPreferences.Editor =  ProfilPreferences.edit()
-            if (isChecked) {
-                editor.putBoolean("soja", true)
-                editor.apply()
-                editor.commit()
-            } else {
-                editor.putBoolean("soja", false)
-                editor.apply()
-                editor.commit()
-            }
-        }
-
-        val check_Fisch = ProfilPreferences.getBoolean("fisch", false)
-        sw_Fisch.setChecked(check_Fisch)
-
-        sw_Fisch.setOnCheckedChangeListener { _, isChecked ->
-            Toast.makeText(
-                activity, "Fisch wurde " + if (isChecked) "angewählt" else "abgewählt",
-                Toast.LENGTH_SHORT
-            ).show()
-            val editor:SharedPreferences.Editor =  ProfilPreferences.edit()
-            if (isChecked) {
-                editor.putBoolean("fisch", true)
-                editor.apply()
-                editor.commit()
-            } else {
-                editor.putBoolean("fisch", false)
-                editor.apply()
-                editor.commit()
-            }
-        }
-
-        val check_Weich = ProfilPreferences.getBoolean("weich", false)
-        sw_Weich.setChecked(check_Weich)
-
-        sw_Weich.setOnCheckedChangeListener { _, isChecked ->
-            Toast.makeText(
-                activity, "Weichtiere wurde " + if (isChecked) "angewählt" else "abgewählt",
-                Toast.LENGTH_SHORT
-            ).show()
-            val editor:SharedPreferences.Editor =  ProfilPreferences.edit()
-            if (isChecked) {
-                editor.putBoolean("weich", true)
-                editor.apply()
-                editor.commit()
-            } else {
-                editor.putBoolean("weich", false)
-                editor.apply()
-                editor.commit()
-            }
-        }
-
-        val check_Kruste = ProfilPreferences.getBoolean("kruste", false)
-        sw_Kruste.setChecked(check_Kruste)
-
-        sw_Kruste.setOnCheckedChangeListener { _, isChecked ->
-            Toast.makeText(
-                activity, "Krustentiere wurde " + if (isChecked) "angewählt" else "abgewählt",
-                Toast.LENGTH_SHORT
-            ).show()
-            val editor:SharedPreferences.Editor =  ProfilPreferences.edit()
-            if (isChecked) {
-                editor.putBoolean("kruste", true)
-                editor.apply()
-                editor.commit()
-            } else {
-                editor.putBoolean("kruste", false)
-                editor.apply()
-                editor.commit()
-            }
-        }
-
-        val check_Kuh = ProfilPreferences.getBoolean("kuh", false)
-        sw_Kuh.setChecked(check_Kuh)
-
-        sw_Kuh.setOnCheckedChangeListener { _, isChecked ->
-            Toast.makeText(
-                activity, "Kuhmilch wurde " + if (isChecked) "angewählt" else "abgewählt",
-                Toast.LENGTH_SHORT
-            ).show()
-            val editor:SharedPreferences.Editor =  ProfilPreferences.edit()
-            if (isChecked) {
-                editor.putBoolean("kuh", true)
-                editor.apply()
-                editor.commit()
-            } else {
-                editor.putBoolean("kuh", false)
-                editor.apply()
-                editor.commit()
-            }
-        }
-
-        val check_Lupine = ProfilPreferences.getBoolean("lupine", false)
-        sw_Lupine.setChecked(check_Lupine)
-
-        sw_Lupine.setOnCheckedChangeListener { _, isChecked ->
-            Toast.makeText(
-                activity, "Lupine wurde " + if (isChecked) "angewählt" else "abgewählt",
-                Toast.LENGTH_SHORT
-            ).show()
-            val editor:SharedPreferences.Editor =  ProfilPreferences.edit()
-            if (isChecked) {
-                editor.putBoolean("lupine", true)
-                editor.apply()
-                editor.commit()
-            } else {
-                editor.putBoolean("lupine", false)
-                editor.apply()
-                editor.commit()
-            }
-        }
-
-        val check_Sellerie = ProfilPreferences.getBoolean("sellerie", false)
-        sw_Sellerie.setChecked(check_Sellerie)
-
-        sw_Sellerie.setOnCheckedChangeListener { _, isChecked ->
-            Toast.makeText(
-                activity, "Sellerie wurde " + if (isChecked) "angewählt" else "abgewählt",
-                Toast.LENGTH_SHORT
-            ).show()
-            val editor:SharedPreferences.Editor =  ProfilPreferences.edit()
-            if (isChecked) {
-                editor.putBoolean("sellerie", true)
-                editor.apply()
-                editor.commit()
-            } else {
-                editor.putBoolean("sellerie", false)
-                editor.apply()
-                editor.commit()
-            }
-        }
-
-        val check_Gluten = ProfilPreferences.getBoolean("gluten", false)
-        sw_Gluten.setChecked(check_Gluten)
-
-        sw_Gluten.setOnCheckedChangeListener { _, isChecked ->
-            Toast.makeText(
-                activity, "Gluten wurde " + if (isChecked) "angewählt" else "abgewählt",
-                Toast.LENGTH_SHORT
-            ).show()
-            val editor:SharedPreferences.Editor =  ProfilPreferences.edit()
-            if (isChecked) {
-                editor.putBoolean("gluten", true)
-                editor.apply()
-                editor.commit()
-            } else {
-                editor.putBoolean("gluten", false)
-                editor.apply()
-                editor.commit()
-            }
-        }
-
-        val check_Schale = ProfilPreferences.getBoolean("schale", false)
-        sw_Schale.setChecked(check_Schale)
-
-        sw_Schale.setOnCheckedChangeListener { _, isChecked ->
-            Toast.makeText(
-                activity, "Schalenfrüchte wurde " + if (isChecked) "angewählt" else "abgewählt",
-                Toast.LENGTH_SHORT
-            ).show()
-            val editor:SharedPreferences.Editor =  ProfilPreferences.edit()
-            if (isChecked) {
-                editor.putBoolean("schale", true)
-                editor.apply()
-                editor.commit()
-            } else {
-                editor.putBoolean("schale", false)
-                editor.apply()
-                editor.commit()
-            }
-        }
-
-        val check_SchUSul = ProfilPreferences.getBoolean("schUSul", false)
-        sw_SchUSul.setChecked(check_SchUSul)
-
-        sw_SchUSul.setOnCheckedChangeListener { _, isChecked ->
-            Toast.makeText(
-                activity, "Schwefeldioxid und Sulfide wurde " + if (isChecked) "angewählt" else "abgewählt",
-                Toast.LENGTH_SHORT
-            ).show()
-            val editor:SharedPreferences.Editor =  ProfilPreferences.edit()
-            if (isChecked) {
-                editor.putBoolean("schUSul", true)
-                editor.apply()
-                editor.commit()
-            } else {
-                editor.putBoolean("schUSul", false)
-                editor.apply()
-                editor.commit()
-            }
-        }
-
-        val check_Sesam = ProfilPreferences.getBoolean("sesam", false)
-        sw_Sesam.setChecked(check_Sesam)
-
-        sw_Sesam.setOnCheckedChangeListener { _, isChecked ->
-            Toast.makeText(
-                activity, "Sesam wurde " + if (isChecked) "angewählt" else "abgewählt",
-                Toast.LENGTH_SHORT
-            ).show()
-            val editor:SharedPreferences.Editor =  ProfilPreferences.edit()
-            if (isChecked) {
-                editor.putBoolean("sesam", true)
-                editor.apply()
-                editor.commit()
-            } else {
-                editor.putBoolean("sesam", false)
-                editor.apply()
-                editor.commit()
-            }
-        }
+        binding.switchVegan.setChecked(ProfilPreferences.getBoolean("vegan", false))
+        switchAuswerten(binding.switchVegan, "vegan")
+        binding.switchVege.setChecked(ProfilPreferences.getBoolean("vegetarisch", false))
+        switchAuswerten(binding.switchVege, "vegetarisch")
+        binding.switchEi.setChecked(ProfilPreferences.getBoolean("ei", false))
+        switchAuswerten(binding.switchEi,  "ei")
+        binding.switchSenf.setChecked(ProfilPreferences.getBoolean("senf", false))
+        switchAuswerten(binding.switchSenf, "senf")
+        binding.switchErd.setChecked(ProfilPreferences.getBoolean("erdnuss", false))
+        switchAuswerten(binding.switchErd,"erdnuss")
+        binding.switchSoja.setChecked(ProfilPreferences.getBoolean("soja", false))
+        switchAuswerten(binding.switchSoja, "soja")
+        binding.switchFis.setChecked(ProfilPreferences.getBoolean("fisch", false))
+        switchAuswerten(binding.switchFis, "fisch")
+        binding.switchWeich.setChecked(ProfilPreferences.getBoolean("weich", false))
+        switchAuswerten(binding.switchWeich, "weich")
+        binding.switchKruste.setChecked(ProfilPreferences.getBoolean("kruste", false))
+        switchAuswerten(binding.switchKruste, "kruste")
+        binding.switchKuh.setChecked(ProfilPreferences.getBoolean("kuh", false))
+        switchAuswerten(binding.switchKuh, "kuh") //WARUM HEIßT MILCH KUH?!?!??!??!??!?!?!?!??!?!? AMERICA EXPLAIN!!!!
+        binding.switchLup.setChecked(ProfilPreferences.getBoolean("lupine", false))
+        switchAuswerten(binding.switchLup, "lupine")
+        binding.switchSell.setChecked(ProfilPreferences.getBoolean("sellerie", false))
+        switchAuswerten(binding.switchSell, "sellerie")
+        binding.switchGlut.setChecked(ProfilPreferences.getBoolean("gluten", false))
+        switchAuswerten(binding.switchGlut, "gluten")
+        binding.switchSchale.setChecked(ProfilPreferences.getBoolean("schale", false))
+        switchAuswerten(binding.switchSchale, "schale")
+        binding.switchSchUSul.setChecked(ProfilPreferences.getBoolean("schUSul", false))
+        switchAuswerten(binding.switchSchUSul,"schUSul")
+        binding.switchSes.setChecked(ProfilPreferences.getBoolean("sesam", false))
+        switchAuswerten(binding.switchSes, "sesam")
         return root
+    }
+
+    fun switchAuswerten(
+        sw:Switch,
+        keyvalue:String) {
+        /*
+        Voraussetzung: ProfilPreferences zugewiesen
+        Ergebnis: Einstellung in SharedPreferences gespeichert
+         */
+        sw.setOnCheckedChangeListener { _, isChecked ->
+            //Toast.makeText(
+            //    activity, "Sesam wurde " + if (isChecked) "angewählt" else "abgewählt",
+            //    Toast.LENGTH_SHORT
+            //).show()
+            val editor:SharedPreferences.Editor =  ProfilPreferences.edit()
+            if (isChecked) {
+                editor.putBoolean(keyvalue, true)
+            } else {
+                editor.putBoolean(keyvalue, false)
+            }
+            editor.apply()
+            editor.commit()
+        }
     }
 
     override fun onDestroyView() {

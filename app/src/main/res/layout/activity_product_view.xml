@@ -94,7 +94,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
         android:text="Herstellungsland:"
         android:textSize="16sp"
         android:textStyle="italic"
@@ -103,26 +102,28 @@
 
     <TextView
         android:id="@+id/tv_origin"
-        android:layout_width="240dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
         android:text='"Herstellungsland"'
+        android:lines="1"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/tv_herstellungsland"
         app:layout_constraintTop_toBottomOf="@+id/tv_herstellername" />
 
     <TextView
         android:id="@+id/tv_produktname"
-        android:layout_width="234dp"
-        android:layout_height="wrap_content"
+        android:layout_width="238dp"
+        android:layout_height="117dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="Produkt Name"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="16dp"
         android:lines="4"
+        android:text="Produkt Name"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/iv_produktImage"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -151,11 +152,12 @@
 
     <TextView
         android:id="@+id/tv_herstellername"
-        android:layout_width="157dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
-        android:text='"Hersteller Name"-'
+        android:text='"Hersteller Name"'
+        android:lines="1"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/tv_hersteller"
         app:layout_constraintTop_toBottomOf="@+id/iv_produktImage" />
@@ -175,12 +177,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="1dp"
         android:text="Warnungen"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_herstellungsland" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_novascore" />
 <!--
     <TextView
         android:id="@+id/textView26"
@@ -204,34 +206,48 @@
         app:srcCompat="@android:drawable/ic_dialog_alert"
         app:tint="#FF3300" />-->
 
-    <ImageView
-        android:id="@+id/iv_nutriScore"
-        android:layout_width="85dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="175dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintStart_toEndOf="@+id/tv_warnungen"
-        app:layout_constraintTop_toBottomOf="@+id/iv_novascore"
-        app:srcCompat="@drawable/nutri_a" />
+    <TextView
+        android:id="@+id/tv_scores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="1dp"
+        android:text="Scores"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_herstellungsland" />
 
     <ImageView
         android:id="@+id/iv_novascore"
         android:layout_width="40dp"
         android:layout_height="67dp"
-        android:layout_marginStart="175dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toEndOf="@+id/tv_warnungen"
-        app:layout_constraintTop_toBottomOf="@+id/tv_origin"
+        android:layout_marginTop="1dp"
+        android:layout_marginStart="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_scores"
         app:srcCompat="@drawable/nova" />
+
+    <ImageView
+        android:id="@+id/iv_nutriScore"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="25dp"
+        app:layout_constraintStart_toEndOf="@+id/iv_ecoscore"
+        app:layout_constraintTop_toBottomOf="@+id/tv_scores"
+        app:layout_constraintTop_toTopOf="@+id/iv_novascore"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_novascore"
+        app:srcCompat="@drawable/nutri_a" />
 
     <ImageView
         android:id="@+id/iv_ecoscore"
         android:layout_width="40dp"
         android:layout_height="67dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="25dp"
         app:layout_constraintStart_toEndOf="@+id/iv_novascore"
-        app:layout_constraintTop_toBottomOf="@+id/tv_origin"
+        app:layout_constraintTop_toBottomOf="@+id/tv_scores"
+        app:layout_constraintTop_toTopOf="@+id/iv_nutriScore"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_nutriScore"
         app:srcCompat="@drawable/eco_score_a" />
 
     <View
@@ -239,7 +255,7 @@
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="1dp"
         android:layout_marginEnd="5dp"
         android:background="#BCBCBC"
         app:layout_constraintEnd_toEndOf="parent"
@@ -249,7 +265,7 @@
     <View
         android:id="@+id/view2"
         android:layout_width="0dp"
-        android:layout_height="23dp"
+        android:layout_height="40dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
@@ -325,6 +341,7 @@
         android:layout_marginTop="2dp"
         android:layout_marginEnd="2dp"
         android:text="pro Portion"
+        android:lines="2"
         app:layout_constraintEnd_toEndOf="@+id/view2"
         app:layout_constraintTop_toTopOf="@+id/view2" />
 
@@ -430,7 +447,7 @@
 
     <TextView
         android:id="@+id/textView43"
-        android:layout_width="wrap_content"
+        android:layout_width="113dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="2dp"
