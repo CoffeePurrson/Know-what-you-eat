@@ -2,6 +2,7 @@ package com.example.knowwhatyoueat
 
 import android.annotation.SuppressLint
 import android.content.SharedPreferences
+import android.media.Image
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -62,6 +63,9 @@ class ProductView : AppCompatActivity() {
                         val warnungBild = ImageView(this)
                         warnungBild.setImageResource(resources.getIdentifier("@android:drawable/ic_dialog_alert", null, packageName))
                         warnungBild.setColorFilter(ContextCompat.getColor(this,R.color.allergieWarnung))
+                        warnungBild.scaleType=ImageView.ScaleType.FIT_XY
+                        val layoutParameter = LinearLayout.LayoutParams(50,50)
+                        warnungBild.setLayoutParams(layoutParameter)
                         //Warnungstext erstellen
                         val warnung = TextView(this)
                         warnung.text="Enthält: $allergenName!"

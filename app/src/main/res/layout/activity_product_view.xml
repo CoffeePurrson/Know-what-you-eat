@@ -99,7 +99,7 @@
         android:textSize="16sp"
         android:textStyle="italic"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_produktImage" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_hersteller" />
 
     <TextView
         android:id="@+id/tv_origin"
@@ -110,7 +110,7 @@
         android:text='"Herstellungsland"'
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/tv_herstellungsland"
-        app:layout_constraintTop_toBottomOf="@+id/iv_produktImage" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_herstellername" />
 
     <TextView
         android:id="@+id/tv_produktname"
@@ -119,7 +119,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="Produkt Name"
-        android:lines="3"
+        android:lines="4"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/iv_produktImage"
@@ -146,8 +146,8 @@
         android:text="Hersteller:"
         android:textSize="16sp"
         android:textStyle="italic"
-        app:layout_constraintStart_toEndOf="@+id/iv_produktImage"
-        app:layout_constraintTop_toBottomOf="@+id/tv_produktname" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_produktImage" />
 
     <TextView
         android:id="@+id/tv_herstellername"
@@ -158,7 +158,7 @@
         android:text='"Hersteller Name"-'
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/tv_hersteller"
-        app:layout_constraintTop_toBottomOf="@+id/tv_produktname" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_produktImage" />
 <!--
     <TextView
         android:id="@+id/textView24"
@@ -244,7 +244,7 @@
         android:background="#BCBCBC"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_nutriScore" />
+        app:layout_constraintTop_toBottomOf="@+id/includeWarnungen" />
 
     <View
         android:id="@+id/view2"
