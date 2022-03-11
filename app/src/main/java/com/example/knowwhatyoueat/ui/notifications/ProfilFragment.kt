@@ -97,7 +97,6 @@ class ProfilFragment : Fragment() {
                 editor.putBoolean(keyvalue, false)
             }
             editor.apply()
-            editor.commit()
         }
     }
 
