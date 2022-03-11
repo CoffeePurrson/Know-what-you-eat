@@ -41,8 +41,7 @@ class ProfilFragment : Fragment() {
         _binding = FragmentProfilBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val ProfilPreferences: SharedPreferences =
-            this.requireActivity().getSharedPreferences( sharedPrefFile,MODE_PRIVATE)
+        ProfilPreferences = this.requireActivity().getSharedPreferences( sharedPrefFile,MODE_PRIVATE)
 
         binding.switchVegan.setChecked(ProfilPreferences.getBoolean("vegan", false))
         switchAuswerten(binding.switchVegan, "vegan")

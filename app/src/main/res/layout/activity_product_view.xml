@@ -113,7 +113,7 @@
 
     <TextView
         android:id="@+id/tv_produktname"
-        android:layout_width="238dp"
+        android:layout_width="wrap_content"
         android:layout_height="117dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
