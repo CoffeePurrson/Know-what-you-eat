@@ -41,6 +41,7 @@ class SucheFragment : Fragment() {
 
 
  */
+        /*
         val textView = binding.tvTest
         binding.buTest.setOnClickListener {
             // Instantiate the RequestQueue.
@@ -73,7 +74,9 @@ class SucheFragment : Fragment() {
             // Add the request to the RequestQueue.
             queue.add(stringRequest)
         }
+        */
         return root
+
     }
 
     override fun onDestroyView() {
