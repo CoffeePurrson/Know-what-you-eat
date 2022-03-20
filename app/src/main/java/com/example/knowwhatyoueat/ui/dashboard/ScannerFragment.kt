@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.android.volley.Request
 import com.android.volley.Response
+import android.widget.Toast
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.budiyev.android.codescanner.*
@@ -143,13 +144,18 @@ class DashboardFragment : Fragment() {
             val stringRequest = JsonObjectRequest(
                 Request.Method.GET, url, null,
                 { response ->
-                    val productViewActivity = Intent(getActivity(), ProductView::class.java)
-                    productViewActivity.putExtra("response", response.toString())
-                    startActivity(productViewActivity)
-                    //textView.text = "${response.toString().substring(0, 500)}"
+                    if (response.getString("status_verbose")=="product found") {
+                        val productViewActivity = Intent(getActivity(), ProductView::class.java)
+                        productViewActivity.putExtra("response", response.toString())
+                        startActivity(productViewActivity)
+                    } else {
+                        Toast.makeText(
+                            activity, "Produkt nicht gefunden :(",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
                 },
                 {})
-            // Add the request to the RequestQueue.
             queue.add(stringRequest)
             requestFinished = true
         }
