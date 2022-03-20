@@ -71,8 +71,6 @@ class ProfilFragment : Fragment() {
         switchAuswerten(binding.switchGlut, "gluten")
         binding.switchSchale.setChecked(ProfilPreferences.getBoolean("schale", false))
         switchAuswerten(binding.switchSchale, "schale")
-        binding.switchSchUSul.setChecked(ProfilPreferences.getBoolean("schUSul", false))
-        switchAuswerten(binding.switchSchUSul,"schUSul")
         binding.switchSes.setChecked(ProfilPreferences.getBoolean("sesam", false))
         switchAuswerten(binding.switchSes, "sesam")
         return root
