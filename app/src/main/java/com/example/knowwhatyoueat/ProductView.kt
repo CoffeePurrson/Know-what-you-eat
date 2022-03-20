@@ -64,7 +64,6 @@ class ProductView : AppCompatActivity() {
         filter("soja", "en:soybeans", "Sojabohnen")
         filter("weich", "en:molluscs", "Weichtiere")
         filter("sellerie", "en:celery", "Sellerie")
-        //filter("schUSul", "???", allergensTags, "Schwefeldioxid und Sulfide")
 
         //Lifestylefilter
         lifestyleFilter()
@@ -288,6 +287,9 @@ class ProductView : AppCompatActivity() {
     fun neueMeldung(
         mode:String,
         name:String){
+        /*
+        Hier Kommentar einfügen
+         */
         val bindingWarnungen = binding.includeWarnungen
         val layout:LinearLayout = bindingWarnungen.warnungenLayout
         //ConstraintLayout für neue Warnung erstellen

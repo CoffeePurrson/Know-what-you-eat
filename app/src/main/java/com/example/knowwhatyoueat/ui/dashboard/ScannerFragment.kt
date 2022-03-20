@@ -13,7 +13,6 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.android.volley.Request
-import com.android.volley.Response
 import android.widget.Toast
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
@@ -75,7 +74,7 @@ class DashboardFragment : Fragment() {
             decodeCallback = DecodeCallback {
                 requireActivity().runOnUiThread {
                     // Wird nur bei einem erfolgreichen Scan aufgerufen:
-                    tv_textview.text = it.text //Hier kommt der BARCODE her :D BARCODE=it.text
+                    tv_textview.text = it.text
                     url = "https://world.openfoodfacts.org/api/v0/product/" + it.text
                     urlRequest()
                 }
@@ -124,6 +123,7 @@ class DashboardFragment : Fragment() {
             CAMERA_REQUEST_CODE -> {
                 if (grantResults.isEmpty() || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
                     //Toast.makeText(this, "You need the camera permission to be able to use this app", Toast.LENGTH_SHORT).show()
+                    // Unsuccessful
                 } else {
                     // Successful
                 }
@@ -140,7 +140,6 @@ class DashboardFragment : Fragment() {
     fun urlRequest() {
         if (url != "" && requestFinished == false) {
             val queue = Volley.newRequestQueue(requireActivity().getApplicationContext())
-            // Request a string response from the provided URL.
             val stringRequest = JsonObjectRequest(
                 Request.Method.GET, url, null,
                 { response ->
@@ -150,7 +149,7 @@ class DashboardFragment : Fragment() {
                         startActivity(productViewActivity)
                     } else {
                         Toast.makeText(
-                            activity, "Produkt nicht gefunden :(",
+                            activity, "Produkt nicht gefunden",
                             Toast.LENGTH_SHORT
                         ).show()
                     }

@@ -6,24 +6,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CompoundButton
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.knowwhatyoueat.databinding.FragmentProfilBinding
 import android.widget.Switch
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import com.example.knowwhatyoueat.R
-import com.example.knowwhatyoueat.databinding.FragmentProfilBinding.bind
-//import kotlinx.android.synthetic.main.fragment_profil.*
-import com.example.knowwhatyoueat.databinding.FragmentProfilBinding.inflate
 
 class ProfilFragment : Fragment() {
     private lateinit var profilViewModel: ProfilViewModel
     private var _binding: FragmentProfilBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     //SharedPreferences
@@ -62,7 +52,7 @@ class ProfilFragment : Fragment() {
         binding.switchKruste.setChecked(ProfilPreferences.getBoolean("kruste", false))
         switchAuswerten(binding.switchKruste, "kruste")
         binding.switchKuh.setChecked(ProfilPreferences.getBoolean("kuh", false))
-        switchAuswerten(binding.switchKuh, "kuh") //WARUM HEIßT MILCH KUH?!?!??!??!??!?!?!?!??!?!? AMERICA EXPLAIN!!!!
+        switchAuswerten(binding.switchKuh, "kuh")
         binding.switchLup.setChecked(ProfilPreferences.getBoolean("lupine", false))
         switchAuswerten(binding.switchLup, "lupine")
         binding.switchSell.setChecked(ProfilPreferences.getBoolean("sellerie", false))
@@ -84,10 +74,6 @@ class ProfilFragment : Fragment() {
         Ergebnis: Einstellung in SharedPreferences gespeichert
          */
         sw.setOnCheckedChangeListener { _, isChecked ->
-            //Toast.makeText(
-            //    activity, "Sesam wurde " + if (isChecked) "angewählt" else "abgewählt",
-            //    Toast.LENGTH_SHORT
-            //).show()
             val editor:SharedPreferences.Editor =  ProfilPreferences.edit()
             if (isChecked) {
                 editor.putBoolean(keyvalue, true)
