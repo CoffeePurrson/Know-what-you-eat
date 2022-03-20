@@ -201,7 +201,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_inhaltsstoffe" />
 
     <TextView
         android:id="@+id/textView30"
@@ -219,9 +219,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
         android:layout_marginTop="1dp"
-        android:layout_marginEnd="5dp"
         android:layout_marginBottom="2dp"
         android:paddingLeft="5dp"
+        android:paddingRight="5dp"
         android:text="Inhaltsstoff 1, Inhaltsstoff 2, Inhaltsstoff 3, Inhaltsstoff 4, Inhaltsstoff 5, Inhaltsstoff 6, Inhaltsstoff 7, Inhaltsstoff 8, Inhaltsstoff 9, Inhaltsstoff 10, Inhaltsstoff 11, Inhaltsstoff 12 usw... "
         android:textSize="12sp"
         android:background="#BCBCBC"
