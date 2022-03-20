@@ -56,6 +56,12 @@ class DashboardFragment : Fragment() {
         setupPermissions()
         codeScanner()
 
+        binding.bReset.setOnClickListener {
+            requestFinished=false
+            tv_textview.text ="Bitte wiederholen Sie den Scan!"
+            binding.bReset.setVisibility(View.INVISIBLE)
+        }
+
         return root
     }
 
@@ -77,6 +83,7 @@ class DashboardFragment : Fragment() {
                     tv_textview.text = it.text
                     url = "https://world.openfoodfacts.org/api/v0/product/" + it.text
                     urlRequest()
+                    binding.bReset.setVisibility(View.VISIBLE)
                 }
             }
 

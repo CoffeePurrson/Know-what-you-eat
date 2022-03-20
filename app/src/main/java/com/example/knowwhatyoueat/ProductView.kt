@@ -72,7 +72,7 @@ class ProductView : AppCompatActivity() {
         setProduktname()
         setAllgemeineInformation("brands", binding.tvHerstellername)
         setAllgemeineInformation("origins", binding.tvOrigin)
-        setAllgemeineInformation("ingredients_text", binding.tvInhaltsstoffe)
+        setInhaltsstoffe()
         setPortion()
         setNaehrwerte("energy-kcal_100g","energy-kcal_unit", binding.tvEnergie100)
         setNaehrwerte("energy-kcal_serving","energy-kcal_unit",binding.tvEnergiePortion)
@@ -117,6 +117,27 @@ class ProductView : AppCompatActivity() {
             name="unknown"
         }
         binding.tvProduktname.text = name
+    }
+
+    fun setInhaltsstoffe(){
+        /*
+        Voraussetzung: binding und jsonProduct zugewiesen
+        Ergebnis:Liste der Inhaltsstoffe wird in der ProduktView angezeigt.
+        Hinweise: Eine deutsche Bezeichnung wird vorgezogen, wenn diese nicht existiert wird die englische Bezeichnung vorgezogen, wenn diese nicht existiert
+        wird die allgemeine Bezeichnung verwendet. Falls der String leer ist, wird "unknown" angezeigt.
+         */
+        var inhaltsstoffe=""
+        if (jsonProduct.has("ingredients_text_de")) {
+            inhaltsstoffe = jsonProduct.getString(("ingredients_text_de"))
+        } else if (jsonProduct.has("ingredients_text_en")){
+            inhaltsstoffe = jsonProduct.getString(("ingredients_text_en"))
+        } else if (jsonProduct.has("ingredients_text")){
+            inhaltsstoffe = jsonProduct.getString(("ingredients_text"))
+        }
+        if (inhaltsstoffe ==""){
+            inhaltsstoffe="unknown"
+        }
+        binding.tvInhaltsstoffe.text = inhaltsstoffe
     }
 
     fun setAllgemeineInformation(
@@ -268,8 +289,8 @@ class ProductView : AppCompatActivity() {
             for (i in 0 until jsonLifestyleTags.length()) {
                 when(jsonLifestyleTags[i]) {
                     "en:non-vegan" -> neueMeldung("lifestyle","Nicht vegan!")
-                    "en:vegan-status-unknown" -> neueMeldung("lifestyle","Vielleicht nicht vegan!")
-                    "en:maybe-vegan" -> neueMeldung("lifestyle","Vielleicht nicht vegan!")
+                    "en:vegan-status-unknown" -> neueMeldung("lifestyle","Vielleicht vegan!")
+                    "en:maybe-vegan" -> neueMeldung("lifestyle","Vielleicht vegan!")
                 }
             }
         }
@@ -277,8 +298,8 @@ class ProductView : AppCompatActivity() {
             for (i in 0 until jsonLifestyleTags.length()) {
                 when(jsonLifestyleTags[i]) {
                     "en:non-vegetarian" -> neueMeldung("lifestyle","Nicht vegetarisch!")
-                    "en:vegetarian-status-unknown" -> neueMeldung("lifestyle","Vielleicht nicht vegetarisch!")
-                    "en:maybe-vegetarian" -> neueMeldung("lifestyle","Vielleicht nicht vegetarisch!")
+                    "en:vegetarian-status-unknown" -> neueMeldung("lifestyle","Vielleicht vegetarisch!")
+                    "en:maybe-vegetarian" -> neueMeldung("lifestyle","Vielleicht vegetarisch!")
                 }
             }
         }
@@ -288,7 +309,8 @@ class ProductView : AppCompatActivity() {
         mode:String,
         name:String){
         /*
-        Hier Kommentar einfügen
+        Voraussetzung: binding zugewiesen
+        Ergebnis: Je nach Modus wurde eine Allergie- oder eine Livestylewarnung erstellt.
          */
         val bindingWarnungen = binding.includeWarnungen
         val layout:LinearLayout = bindingWarnungen.warnungenLayout
@@ -338,6 +360,4 @@ class ProductView : AppCompatActivity() {
         cs.applyTo(neuesLayout)
         layout.addView(neuesLayout)
     }
-
-
 }

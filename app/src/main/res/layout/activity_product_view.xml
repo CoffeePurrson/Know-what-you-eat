@@ -8,7 +8,7 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <View
         android:id="@+id/view5"
@@ -179,18 +179,6 @@
         app:srcCompat="@drawable/eco_score_a" />
 
     <View
-        android:id="@+id/view"
-        android:layout_width="0dp"
-        android:layout_height="140dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/includeWarnungen" />
-
-    <View
         android:id="@+id/view2"
         android:layout_width="0dp"
         android:layout_height="40dp"
@@ -205,28 +193,34 @@
 
     <TextView
         android:id="@+id/textView30"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
         android:text="Liste der Inhaltsstoffe:"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view" />
+        android:background="#BCBCBC"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/includeWarnungen" />
+
 
     <TextView
         android:id="@+id/tv_inhaltsstoffe"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:layout_marginBottom="2dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:text="Inhaltsstoff 1, Inhaltsstoff 2, Inhaltsstoff 3, Inhaltsstoff 4, Inhaltsstoff 5, Inhaltsstoff 6, Inhaltsstoff 7, Inhaltsstoff 8, Inhaltsstoff 9, Inhaltsstoff 10, Inhaltsstoff 11, Inhaltsstoff 12 usw... "
         android:textSize="12sp"
         android:background="#BCBCBC"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
     <Button

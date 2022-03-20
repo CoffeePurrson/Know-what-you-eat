@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".ui.dashboard.DashboardFragment">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
   <com.budiyev.android.codescanner.CodeScannerView
       android:id="@+id/scanner_view"
@@ -27,7 +31,20 @@
       android:layout_marginStart="20dp"
       android:layout_marginTop="20dp"
       android:layout_marginEnd="20dp"
-      android:layout_marginBottom="20dp"
-      android:text="Bitte wiederholen Sie den Scan"
+      android:layout_marginBottom="10dp"
+      android:text="Bitte wiederholen Sie den Scan!"
       android:textColor="@android:color/black" />
+
+  <Button
+      android:id="@+id/b_reset"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/tv_textView"
+      android:text="Neuer Scan"
+      android:visibility="invisible"
+      android:textColor="#000000"
+      android:backgroundTint="@color/ui_green"
+      android:layout_centerHorizontal="true"/>
+
 </RelativeLayout>
+</ScrollView>
